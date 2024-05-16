@@ -38,15 +38,15 @@ class Employe {
     static func fromJSON(dict: [String:Any]) -> Employe?{
         guard let uuid = (dict["uuid"] as? String),
               let email = (dict["email"] as? String),
-              let firstName = (dict["firstName"] as? String),
-              let lastName = (dict["lastName"] as? String),
-              let RIB = (dict["RIB"] as? String),
+              let firstName = (dict["first_name"] as? String),
+              let lastName = (dict["last_name"] as? String),
+              let RIB = (dict["rib"] as? String),
               let location = (dict["location"] as? String),
               let role = (dict["role"] as? String),
-              let ticketSolved = (dict["ticketSolved"] as? Int),
-              let numberOfDaysOff = (dict["numberOfDaysOff"] as? Int),
-              let createdAt = (dict["createdAt"] as? String),
-              let updatedAt = (dict["updatedAt"] as? String)
+              let ticketSolved = (dict["ticket_solved"] as? Int),
+              let numberOfDaysOff = (dict["number_of_days_off"] as? Int),
+              let createdAt = (dict["created_at"] as? String),
+              let updatedAt = (dict["updated_at"] as? String)
         else{
             return nil
         }

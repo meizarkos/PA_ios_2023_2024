@@ -21,17 +21,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="csi-eb-Pe0">
-                    <rect key="frame" x="0.0" y="24" width="1024" height="1202"/>
+                    <rect key="frame" x="0.0" y="24" width="1024" height="1222"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJs-8Z-nLF">
+                    <rect key="frame" x="15" y="1246" width="994" height="61"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Add employe" cornerStyle="capsule"/>
+                    <connections>
+                        <action selector="addEmploye:" destination="-1" eventType="touchUpInside" id="oyg-S3-eqv"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="csi-eb-Pe0" secondAttribute="trailing" id="4F9-f0-GJc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eJs-8Z-nLF" secondAttribute="bottom" constant="39" id="6u5-Ou-9RL"/>
+                <constraint firstItem="csi-eb-Pe0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E8o-bw-NRj"/>
+                <constraint firstItem="eJs-8Z-nLF" firstAttribute="top" secondItem="csi-eb-Pe0" secondAttribute="bottom" id="G5Z-gI-OVO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="csi-eb-Pe0" secondAttribute="bottom" constant="100" id="GNl-RG-3N3"/>
+                <constraint firstItem="eJs-8Z-nLF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JiO-nI-OUH"/>
+                <constraint firstItem="csi-eb-Pe0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Myt-h4-yoP"/>
                 <constraint firstItem="csi-eb-Pe0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Uts-sq-VVp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="csi-eb-Pe0" secondAttribute="bottom" constant="120" id="esC-QG-8UE"/>
-                <constraint firstItem="csi-eb-Pe0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tFv-fW-IiY"/>
+                <constraint firstItem="csi-eb-Pe0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aS1-pO-igI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eJs-8Z-nLF" secondAttribute="trailing" constant="15" id="kaw-Rd-lum"/>
+                <constraint firstItem="eJs-8Z-nLF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="n3S-yO-zaz"/>
             </constraints>
             <point key="canvasLocation" x="132" y="56"/>
         </view>

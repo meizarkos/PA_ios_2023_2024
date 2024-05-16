@@ -30,10 +30,10 @@ class Team {
     
     static func fromJSON(dict: [String:Any]) -> Team?{
         guard let uuid = (dict["uuid"] as? String),
-              let teamName = (dict["teamName"] as? String),
-              let createdAt = (dict["createdAt"] as? String),
-              let updatedAt = (dict["updatedAt"] as? String),
-              let numberOfEmploye = (dict["numberOfEmploye"] as? Int)
+              let teamName = (dict["team_name"] as? String),
+              let createdAt = (dict["created_at"] as? String),
+              let updatedAt = (dict["updated_at"] as? String),
+              let numberOfEmploye = (dict["number_of_employe"] as? Int)
         else{
             return nil
         }

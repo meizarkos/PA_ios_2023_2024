@@ -92,33 +92,57 @@
 		ECA06F402BD9634500D12959 /* PA_ios_2023_2024 */ = {
 			isa = PBXGroup;
 			children = (
+				ECF10F072BF5F4780097A3A7 /* Ticket */,
+				ECF10F062BF5F4320097A3A7 /* Team */,
+				ECF10F052BF5F3F70097A3A7 /* Employe */,
 				ECA06F412BD9634500D12959 /* AppDelegate.swift */,
 				ECA06F4A2BD9634700D12959 /* Assets.xcassets */,
-				ECA06F4C2BD9634700D12959 /* LaunchScreen.storyboard */,
 				ECA06F4F2BD9634700D12959 /* Info.plist */,
+				ECA06F4C2BD9634700D12959 /* LaunchScreen.storyboard */,
 				ECA06F552BD964F200D12959 /* HomeViewController.swift */,
+				ECA06F562BD964F200D12959 /* HomeViewController.xib */,
 				ECA06F592BD96DFD00D12959 /* AccueilViewController.swift */,
-				ECA06F5F2BD9711200D12959 /* UnsolvedTicketsViewController.swift */,
-				EC5E9D252BDFF64100E372D9 /* Team.swift */,
-				ECA06F652BD9737B00D12959 /* GetTicketsTableViewCell.swift */,
-				ECA06F662BD9737B00D12959 /* GetTicketsTableViewCell.xib */,
-				EC5E9D212BDFF5C100E372D9 /* TeamViewController.swift */,
-				EC5E9D2B2BE002A400E372D9 /* CreateTeamViewController.swift */,
-				EC5E9D2F2BE005C900E372D9 /* AddEmployeViewController.swift */,
-				EC5E9D352BE014AB00E372D9 /* GetEmployesTableViewCell.swift */,
+				ECA06F5A2BD96DFD00D12959 /* AccueilViewController.xib */,
+			);
+			path = PA_ios_2023_2024;
+			sourceTree = "<group>";
+		};
+		ECF10F052BF5F3F70097A3A7 /* Employe */ = {
+			isa = PBXGroup;
+			children = (
 				EC5E9D362BE014AB00E372D9 /* GetEmployesTableViewCell.xib */,
-				EC5E9D332BE010EE00E372D9 /* Employe.swift */,
+				EC5E9D352BE014AB00E372D9 /* GetEmployesTableViewCell.swift */,
 				EC5E9D302BE005C900E372D9 /* AddEmployeViewController.xib */,
+				EC5E9D2F2BE005C900E372D9 /* AddEmployeViewController.swift */,
+				EC5E9D332BE010EE00E372D9 /* Employe.swift */,
+			);
+			path = Employe;
+			sourceTree = "<group>";
+		};
+		ECF10F062BF5F4320097A3A7 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				EC5E9D212BDFF5C100E372D9 /* TeamViewController.swift */,
+				EC5E9D222BDFF5C100E372D9 /* TeamViewController.xib */,
+				EC5E9D2B2BE002A400E372D9 /* CreateTeamViewController.swift */,
 				EC5E9D2C2BE002A400E372D9 /* CreateTeamViewController.xib */,
 				EC5E9D272BDFF80900E372D9 /* GetTeamsTableViewCell.swift */,
 				EC5E9D282BDFF80900E372D9 /* GetTeamsTableViewCell.xib */,
-				EC5E9D222BDFF5C100E372D9 /* TeamViewController.xib */,
+				EC5E9D252BDFF64100E372D9 /* Team.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		ECF10F072BF5F4780097A3A7 /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				ECA06F652BD9737B00D12959 /* GetTicketsTableViewCell.swift */,
+				ECA06F662BD9737B00D12959 /* GetTicketsTableViewCell.xib */,
+				ECA06F5F2BD9711200D12959 /* UnsolvedTicketsViewController.swift */,
 				ECA06F602BD9711200D12959 /* UnsolvedTicketsViewController.xib */,
 				ECA06F692BD9753D00D12959 /* Ticket.swift */,
-				ECA06F5A2BD96DFD00D12959 /* AccueilViewController.xib */,
-				ECA06F562BD964F200D12959 /* HomeViewController.xib */,
 			);
-			path = PA_ios_2023_2024;
+			path = Ticket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

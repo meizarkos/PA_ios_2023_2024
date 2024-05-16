@@ -42,7 +42,7 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
     }
     
     func fetchTeam(){
-        let url = URL(string: "https://helpother.fr/employeTeam")!
+        let url = URL(string: "https://helpother.fr/employeTeamNumber")!
         
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         self.token = appdelegate.token

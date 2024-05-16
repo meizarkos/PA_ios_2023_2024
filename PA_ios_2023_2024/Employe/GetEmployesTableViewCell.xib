@@ -23,19 +23,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6z-0Y-wxJ">
-                        <rect key="frame" x="16" y="58" width="288" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6z-0Y-wxJ">
+                        <rect key="frame" x="16" y="57" width="288" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-TJ-O6t">
+                        <rect key="frame" x="247" y="46" width="51" height="31"/>
+                        <connections>
+                            <action selector="addOrDelete:" destination="KGk-i7-Jjw" eventType="valueChanged" id="y6P-JP-vsd"/>
+                        </connections>
+                    </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="I6z-0Y-wxJ" secondAttribute="bottom" constant="15" id="53e-Xx-cmw"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="I6z-0Y-wxJ" secondAttribute="bottom" constant="16" id="53e-Xx-cmw"/>
                     <constraint firstAttribute="trailingMargin" secondItem="I6z-0Y-wxJ" secondAttribute="trailing" id="7uW-c7-5uk"/>
                     <constraint firstAttribute="trailing" secondItem="XBH-Tz-Zah" secondAttribute="trailing" id="FQq-Eu-wso"/>
                     <constraint firstItem="XBH-Tz-Zah" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HZr-OR-mZ7"/>
+                    <constraint firstAttribute="trailing" secondItem="2sR-TJ-O6t" secondAttribute="trailing" constant="24" id="Hz9-Vp-oVd"/>
                     <constraint firstItem="I6z-0Y-wxJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Rzr-fl-4pt"/>
+                    <constraint firstAttribute="bottom" secondItem="2sR-TJ-O6t" secondAttribute="bottom" constant="28" id="lQ7-A1-jHJ"/>
                     <constraint firstItem="XBH-Tz-Zah" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zvd-CF-qf4"/>
                 </constraints>
             </tableViewCellContentView>

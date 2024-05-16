@@ -7,6 +7,21 @@
 
 import UIKit
 
+
+class storeEmployeToAdd {
+    static let listEmploye = storeEmployeToAdd()
+    var employeToAdd:[String] = []
+    var employeToDelete:[String] = []
+
+    private init(){}
+    
+    func getChain(tab:[String])->String{
+        let chaine = tab.joined(separator: ",")
+        return chaine
+    }
+    
+}
+
 class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var employeTableView: UITableView!
@@ -18,6 +33,7 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
     init(teamName:String){
         self.teamName=teamName
         super.init(nibName: nil, bundle: nil)
+        storeEmployeToAdd.listEmploye.employeToAdd = []
     }
     
     required init?(coder: NSCoder) {
@@ -25,8 +41,8 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.employes.count
-        }
+        return self.employes.count
+    }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let employe = self.employes[indexPath.row]
@@ -85,7 +101,63 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
         task.resume()
     }
 
-
+    @IBAction func addEmploye(_ sender: Any) {
+        let semaphore = DispatchSemaphore(value: 0)
+        var url = URL(string: "https://helpother.fr/team")!
+        var teamId:String=""
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        self.token = appdelegate.token
+        
+        let body = ["team_name": self.teamName]
+        guard let JSONbody = try? JSONSerialization.data(withJSONObject: body) else{return}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = JSONbody
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, err in
+            
+            defer{
+                semaphore.signal()
+            }
+            
+            guard err == nil else{return}
+            guard let dataIsNotNull = data else{return}
+            guard let json = try? JSONSerialization.jsonObject(with: dataIsNotNull) else{return}
+            
+            guard let response = json as? [String:Any] else{return}
+            guard let item = response["item"] as? [String:String] else {return}
+            teamId = item["uuid"]!
+            
+            
+        }
+        task.resume()
+        semaphore.wait()
+        
+        let singletonChain:storeEmployeToAdd = storeEmployeToAdd.listEmploye
+        let chaineToAdd:String = singletonChain.getChain(tab: singletonChain.employeToAdd)
+        url=URL(string: "https://helpother.fr/employeTeam/\(teamId)?ids=\(chaineToAdd)&idsDelete=")!
+        
+        var add = URLRequest(url: url)
+        add.httpMethod = "POST"
+        add.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
+        add.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let addEmploye = URLSession.shared.dataTask(with: add) { data, response, err in
+            guard err == nil else{return}
+            guard let dataIsNotNull = data else{return}
+            guard let json = try? JSONSerialization.jsonObject(with: dataIsNotNull) else{return}
+            
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(TeamViewController(), animated: true)
+            }
+        }
+        addEmploye.resume()
+    }
+    
     /*
     // MARK: - Navigation
 

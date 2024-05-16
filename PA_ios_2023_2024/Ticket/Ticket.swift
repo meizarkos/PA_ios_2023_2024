@@ -32,9 +32,9 @@ class Ticket {
               let title = (dict["title"] as? String),
               let description = (dict["description"] as? String),
               let status = (dict["status"] as? Int),
-              let createdAt = (dict["createdAt"] as? String),
-              let updatedAt = (dict["updatedAt"] as? String),
-              let creatorId = (dict["creatorId"] as? String)
+              let createdAt = (dict["created_at"] as? String),
+              let updatedAt = (dict["updated_at"] as? String),
+              let creatorId = (dict["creator_id"] as? String)
         else{
             return nil
         }
