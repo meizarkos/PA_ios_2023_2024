@@ -11,7 +11,6 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
     
     @IBOutlet weak var teamTableView: UITableView!
     var teams : [Team] = []
-    var token:String?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return self.teams.count
@@ -42,17 +41,8 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
     }
     
     func fetchTeam(){
-        let url = URL(string: "https://helpother.fr/employeTeamNumber")!
         
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        self.token = appdelegate.token
-        
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        let request = request(url: "employeTeamNumber", verb: "GET")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, err in
             guard err == nil else{return}
