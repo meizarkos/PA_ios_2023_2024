@@ -47,11 +47,11 @@ class Company {
               let location = (dict["location"] as? String),
               let role = (dict["role"] as? String),
               let created_at = (dict["created_at"] as? String),
-              let updated_at = (dict["updated_at"] as? String),
-              let phone = (dict["phone"] as? String?)
+              let updated_at = (dict["updated_at"] as? String)
         else{
             return nil
         }
+        let phone = (dict["phone"] as? String)
         
         
         return Company(uuid: uuid, email: email, company_name: company_name, phone: phone, siret_number: siret_number, location: location, role: role, created_at: created_at, updated_at: updated_at)

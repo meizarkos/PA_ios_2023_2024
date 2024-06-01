@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
                         
                         appdelegate.token = answerSuccess["token"]
                         
-                        self.navigationController?.pushViewController(CompanyViewController(), animated: true)
+                        self.navigationController?.pushViewController(TeamViewController(), animated: true)
                         
                     }
                 }

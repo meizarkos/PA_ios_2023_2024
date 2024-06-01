@@ -30,8 +30,24 @@ class CompanyViewController: UIViewController,UITextFieldDelegate,UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(companies[indexPath.row].company_name)
+        let next = DetailCompanyViewController.newInstance(company: self.companies[indexPath.row])
         
+        if let splitVC = self.splitViewController {
+            if splitVC.isCollapsed {
+                self.navigationController?.pushViewController(next, animated: true)
+            }
+            else{
+                if let detailNavController = splitVC.viewControllers.last as? UINavigationController {
+                    detailNavController.setViewControllers([next], animated: true)
+                }
+                else{
+                    splitVC.showDetailViewController(UINavigationController(rootViewController: next), sender: self)
+                }
+            }
+        }
+        else if self.navigationController != nil {
+            self.navigationController?.pushViewController(next, animated: true)
+        }
     }
     
     
@@ -66,6 +82,10 @@ class CompanyViewController: UIViewController,UITextFieldDelegate,UITableViewDel
             }
         }
         task.resume()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchCompany()
     }
 
 

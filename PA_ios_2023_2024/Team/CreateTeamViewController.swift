@@ -11,7 +11,6 @@ class CreateTeamViewController: UIViewController {
 
     @IBOutlet weak var errorName: UILabel!
     @IBOutlet weak var teamName: UITextField!
-    var token:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +33,7 @@ class CreateTeamViewController: UIViewController {
             return
         }
         
-        let url=URL(string:"https://helpother.fr/teamName/\(teamName.text!)")!
-        
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        self.token = appdelegate.token
-        
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let request = request(url: "teamName/\(teamName.text!)", verb: "GET")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, err in
             guard err == nil else{return}
@@ -54,7 +44,7 @@ class CreateTeamViewController: UIViewController {
             
             DispatchQueue.main.async {
                 if(response["message"]=="Name is available"){
-                    let destination = AddEmployeViewController(teamName:self.teamName.text!)
+                    let destination = AddEmployeViewController.newInstance( teamName:self.teamName.text!)
                     self.navigationController?.pushViewController(destination, animated: true)
                 }
                 else{

@@ -21,6 +21,9 @@ class GetCompanyTableViewCell: UITableViewCell {
         if let phone = company.phone {
             self.phone.text = "Phone : \(phone)"
         }
-        creation.text = company.created_at
+        else{
+            self.phone.text = "No phone provided"
+        }
+        creation.text = removeLastCharacters(from: company.company_name, number: 5)
     }
 }

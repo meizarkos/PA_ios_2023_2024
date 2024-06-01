@@ -25,20 +25,10 @@ class storeEmployeToAdd {
 class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var employeTableView: UITableView!
-    var teamName:String
+    var teamName:String!
     
     var  employes: [Employe] = []
     var token:String?
-    
-    init(teamName:String){
-        self.teamName=teamName
-        super.init(nibName: nil, bundle: nil)
-        storeEmployeToAdd.listEmploye.employeToAdd = []
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.employes.count
@@ -64,22 +54,13 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
         self.employeTableView.register(cellNib, forCellReuseIdentifier: "EMPLOYES_CELL_ID")
         self.employeTableView.dataSource = self
         self.employeTableView.delegate = self
-
+        storeEmployeToAdd.listEmploye.employeToAdd = []
+        storeEmployeToAdd.listEmploye.employeToDelete = []
         fetchEmploye()
     }
     
     func fetchEmploye(){
-        let url = URL(string: "https://helpother.fr/employe")!
-        
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        self.token = appdelegate.token
-        
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        let request = request(url: "employe", verb: "GET")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, err in
             guard err == nil else{return}
@@ -103,20 +84,9 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
 
     @IBAction func addEmploye(_ sender: Any) {
         let semaphore = DispatchSemaphore(value: 0)
-        var url = URL(string: "https://helpother.fr/team")!
         var teamId:String=""
         
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        self.token = appdelegate.token
-        
-        let body = ["team_name": self.teamName]
-        guard let JSONbody = try? JSONSerialization.data(withJSONObject: body) else{return}
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = JSONbody
+        let request = requestWithBody(url: "team", verb: "POST", body: ["team_name": self.teamName as String])
         
         let task = URLSession.shared.dataTask(with: request) { data, response, err in
             
@@ -131,25 +101,28 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
             guard let response = json as? [String:Any] else{return}
             guard let item = response["item"] as? [String:String] else {return}
             teamId = item["uuid"]!
-            
-            
         }
         task.resume()
         semaphore.wait()
         
         let singletonChain:storeEmployeToAdd = storeEmployeToAdd.listEmploye
         let chaineToAdd:String = singletonChain.getChain(tab: singletonChain.employeToAdd)
-        url=URL(string: "https://helpother.fr/employeTeam/\(teamId)?ids=\(chaineToAdd)&idsDelete=")!
+        
+        
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        self.token = appdelegate.token
+        let url=URL(string: "https://helpother.fr/employeTeam/\(teamId)?ids=\(chaineToAdd)&idsDelete=")!
         
         var add = URLRequest(url: url)
         add.httpMethod = "POST"
         add.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
         add.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
         
         let addEmploye = URLSession.shared.dataTask(with: add) { data, response, err in
             guard err == nil else{return}
             guard let dataIsNotNull = data else{return}
-            guard let json = try? JSONSerialization.jsonObject(with: dataIsNotNull) else{return}
+            guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
             DispatchQueue.main.async {
                 self.navigationController?.pushViewController(TeamViewController(), animated: true)
@@ -158,14 +131,17 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
         addEmploye.resume()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        fetchEmploye()
+        storeEmployeToAdd.listEmploye.employeToAdd = []
+        storeEmployeToAdd.listEmploye.employeToDelete = []
     }
-    */
-
+    
+    static func newInstance(teamName:String)->AddEmployeViewController{
+        let addEmployeVC = AddEmployeViewController()
+        addEmployeVC.teamName = teamName
+        storeEmployeToAdd.listEmploye.employeToAdd = []
+        storeEmployeToAdd.listEmploye.employeToDelete = []
+        return addEmployeVC
+    }
 }

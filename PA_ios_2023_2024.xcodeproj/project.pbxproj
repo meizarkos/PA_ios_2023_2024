@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC09FFE42C0B111A007C4D45 /* DetailCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09FFE22C0B111A007C4D45 /* DetailCompanyViewController.swift */; };
+		EC09FFE52C0B111A007C4D45 /* DetailCompanyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC09FFE32C0B111A007C4D45 /* DetailCompanyViewController.xib */; };
+		EC09FFE82C0B2254007C4D45 /* DetailTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09FFE62C0B2254007C4D45 /* DetailTeamViewController.swift */; };
+		EC09FFE92C0B2254007C4D45 /* DetailTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC09FFE72C0B2254007C4D45 /* DetailTeamViewController.xib */; };
+		EC09FFEB2C0B22D5007C4D45 /* stringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC09FFEA2C0B22D5007C4D45 /* stringManager.swift */; };
 		EC5E9D232BDFF5C100E372D9 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5E9D212BDFF5C100E372D9 /* TeamViewController.swift */; };
 		EC5E9D242BDFF5C100E372D9 /* TeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5E9D222BDFF5C100E372D9 /* TeamViewController.xib */; };
 		EC5E9D262BDFF64200E372D9 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5E9D252BDFF64100E372D9 /* Team.swift */; };
@@ -40,6 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC09FFE22C0B111A007C4D45 /* DetailCompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCompanyViewController.swift; sourceTree = "<group>"; };
+		EC09FFE32C0B111A007C4D45 /* DetailCompanyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCompanyViewController.xib; sourceTree = "<group>"; };
+		EC09FFE62C0B2254007C4D45 /* DetailTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamViewController.swift; sourceTree = "<group>"; };
+		EC09FFE72C0B2254007C4D45 /* DetailTeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTeamViewController.xib; sourceTree = "<group>"; };
+		EC09FFEA2C0B22D5007C4D45 /* stringManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringManager.swift; sourceTree = "<group>"; };
 		EC5E9D212BDFF5C100E372D9 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		EC5E9D222BDFF5C100E372D9 /* TeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamViewController.xib; sourceTree = "<group>"; };
 		EC5E9D252BDFF64100E372D9 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -85,6 +95,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC09FFEC2C0B2950007C4D45 /* TeamView */ = {
+			isa = PBXGroup;
+			children = (
+				EC5E9D212BDFF5C100E372D9 /* TeamViewController.swift */,
+				EC5E9D222BDFF5C100E372D9 /* TeamViewController.xib */,
+				EC5E9D272BDFF80900E372D9 /* GetTeamsTableViewCell.swift */,
+				EC5E9D282BDFF80900E372D9 /* GetTeamsTableViewCell.xib */,
+			);
+			path = TeamView;
+			sourceTree = "<group>";
+		};
 		EC986F6C2C0A26010015126D /* Company */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,16 +114,19 @@
 				EC986F732C0A2C5F0015126D /* CompanyViewController.xib */,
 				EC986F782C0A2C9B0015126D /* GetCompanyTableViewCell.swift */,
 				EC986F792C0A2C9B0015126D /* GetCompanyTableViewCell.xib */,
+				EC09FFE22C0B111A007C4D45 /* DetailCompanyViewController.swift */,
+				EC09FFE32C0B111A007C4D45 /* DetailCompanyViewController.xib */,
 			);
 			path = Company;
 			sourceTree = "<group>";
 		};
-		EC986F6D2C0A26D30015126D /* APIrequest */ = {
+		EC986F6D2C0A26D30015126D /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				EC986F6E2C0A26E60015126D /* API.swift */,
+				EC09FFEA2C0B22D5007C4D45 /* stringManager.swift */,
 			);
-			path = APIrequest;
+			path = utils;
 			sourceTree = "<group>";
 		};
 		ECA06F352BD9634500D12959 = {
@@ -124,11 +148,10 @@
 		ECA06F402BD9634500D12959 /* PA_ios_2023_2024 */ = {
 			isa = PBXGroup;
 			children = (
-				EC986F6D2C0A26D30015126D /* APIrequest */,
+				EC986F6D2C0A26D30015126D /* utils */,
 				EC986F6C2C0A26010015126D /* Company */,
 				ECF10F072BF5F4780097A3A7 /* Ticket */,
 				ECF10F062BF5F4320097A3A7 /* Team */,
-				ECF10F052BF5F3F70097A3A7 /* Employe */,
 				ECA06F412BD9634500D12959 /* AppDelegate.swift */,
 				ECA06F4A2BD9634700D12959 /* Assets.xcassets */,
 				ECA06F4F2BD9634700D12959 /* Info.plist */,
@@ -141,7 +164,7 @@
 			path = PA_ios_2023_2024;
 			sourceTree = "<group>";
 		};
-		ECF10F052BF5F3F70097A3A7 /* Employe */ = {
+		ECF10F052BF5F3F70097A3A7 /* EmployeView */ = {
 			isa = PBXGroup;
 			children = (
 				EC5E9D362BE014AB00E372D9 /* GetEmployesTableViewCell.xib */,
@@ -150,19 +173,19 @@
 				EC5E9D2F2BE005C900E372D9 /* AddEmployeViewController.swift */,
 				EC5E9D332BE010EE00E372D9 /* Employe.swift */,
 			);
-			path = Employe;
+			path = EmployeView;
 			sourceTree = "<group>";
 		};
 		ECF10F062BF5F4320097A3A7 /* Team */ = {
 			isa = PBXGroup;
 			children = (
-				EC5E9D212BDFF5C100E372D9 /* TeamViewController.swift */,
-				EC5E9D222BDFF5C100E372D9 /* TeamViewController.xib */,
-				EC5E9D2B2BE002A400E372D9 /* CreateTeamViewController.swift */,
-				EC5E9D2C2BE002A400E372D9 /* CreateTeamViewController.xib */,
-				EC5E9D272BDFF80900E372D9 /* GetTeamsTableViewCell.swift */,
-				EC5E9D282BDFF80900E372D9 /* GetTeamsTableViewCell.xib */,
+				EC09FFEC2C0B2950007C4D45 /* TeamView */,
+				ECF10F052BF5F3F70097A3A7 /* EmployeView */,
 				EC5E9D252BDFF64100E372D9 /* Team.swift */,
+				EC5E9D2C2BE002A400E372D9 /* CreateTeamViewController.xib */,
+				EC5E9D2B2BE002A400E372D9 /* CreateTeamViewController.swift */,
+				EC09FFE62C0B2254007C4D45 /* DetailTeamViewController.swift */,
+				EC09FFE72C0B2254007C4D45 /* DetailTeamViewController.xib */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -244,10 +267,12 @@
 				EC5E9D2E2BE002A400E372D9 /* CreateTeamViewController.xib in Resources */,
 				ECA06F4E2BD9634700D12959 /* LaunchScreen.storyboard in Resources */,
 				ECA06F4B2BD9634700D12959 /* Assets.xcassets in Resources */,
+				EC09FFE92C0B2254007C4D45 /* DetailTeamViewController.xib in Resources */,
 				ECA06F582BD964F200D12959 /* HomeViewController.xib in Resources */,
 				ECA06F622BD9711200D12959 /* UnsolvedTicketsViewController.xib in Resources */,
 				ECA06F5C2BD96DFD00D12959 /* AccueilViewController.xib in Resources */,
 				EC5E9D322BE005C900E372D9 /* AddEmployeViewController.xib in Resources */,
+				EC09FFE52C0B111A007C4D45 /* DetailCompanyViewController.xib in Resources */,
 				EC5E9D382BE014AB00E372D9 /* GetEmployesTableViewCell.xib in Resources */,
 				EC5E9D2A2BDFF80900E372D9 /* GetTeamsTableViewCell.xib in Resources */,
 			);
@@ -262,7 +287,9 @@
 			files = (
 				ECA06F612BD9711200D12959 /* UnsolvedTicketsViewController.swift in Sources */,
 				ECA06F6A2BD9753D00D12959 /* Ticket.swift in Sources */,
+				EC09FFE82C0B2254007C4D45 /* DetailTeamViewController.swift in Sources */,
 				ECA06F422BD9634500D12959 /* AppDelegate.swift in Sources */,
+				EC09FFEB2C0B22D5007C4D45 /* stringManager.swift in Sources */,
 				EC5E9D372BE014AB00E372D9 /* GetEmployesTableViewCell.swift in Sources */,
 				ECA06F572BD964F200D12959 /* HomeViewController.swift in Sources */,
 				EC5E9D262BDFF64200E372D9 /* Team.swift in Sources */,
@@ -277,6 +304,7 @@
 				EC5E9D292BDFF80900E372D9 /* GetTeamsTableViewCell.swift in Sources */,
 				EC5E9D312BE005C900E372D9 /* AddEmployeViewController.swift in Sources */,
 				EC5E9D2D2BE002A400E372D9 /* CreateTeamViewController.swift in Sources */,
+				EC09FFE42C0B111A007C4D45 /* DetailCompanyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

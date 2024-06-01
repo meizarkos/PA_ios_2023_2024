@@ -13,11 +13,10 @@ class GetEmployesTableViewCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     var uuid:String=""
     
-    //let employeAll = UIApplication.shared.delegate as! AddEmployeViewController
     
     func reload(with employe:Employe){
         lastAndFirstName.text = "\(employe.lastName) \(employe.firstName)"
-        date.text = "Employe since \(employe.createdAt)"
+        date.text = "Employe since \(removeLastCharacters(from:employe.createdAt,number:5))"
         uuid = employe.uuid
     }
     
@@ -28,6 +27,7 @@ class GetEmployesTableViewCell: UITableViewCell {
         }
         else{
             storeEmployeToAdd.listEmploye.employeToAdd.removeAll{$0 == uuid}
+            self.backgroundColor = UIColor.white
         }
     }
     
