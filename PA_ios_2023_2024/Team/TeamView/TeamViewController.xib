@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-tC-YPJ">
-                    <rect key="frame" x="0.0" y="24" width="1024" height="1222"/>
+                    <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-AQ-CS3">
@@ -36,9 +36,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Va6-tC-YPJ" secondAttribute="bottom" constant="120" id="EtK-TC-UrM"/>
+                <constraint firstAttribute="bottom" secondItem="Va6-tC-YPJ" secondAttribute="bottom" id="EtK-TC-UrM"/>
                 <constraint firstItem="Va6-tC-YPJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OG9-DF-uEG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hcO-AQ-CS3" secondAttribute="bottom" constant="15" id="Yir-1L-mS9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hcO-AQ-CS3" secondAttribute="bottom" constant="35" id="Yir-1L-mS9"/>
                 <constraint firstItem="Va6-tC-YPJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aKg-e3-75A"/>
                 <constraint firstItem="hcO-AQ-CS3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oOM-su-KUa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Va6-tC-YPJ" secondAttribute="trailing" id="wMN-pD-dwJ"/>

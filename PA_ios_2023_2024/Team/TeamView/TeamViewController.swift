@@ -28,9 +28,32 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let next = DetailTeamViewController.newInstance(team:self.teams[indexPath.row])
+        
+        if let splitVC = self.splitViewController {
+            if splitVC.isCollapsed {
+                self.navigationController?.pushViewController(next, animated: true)
+            }
+            else{
+                if let detailNavController = splitVC.viewControllers.last as? UINavigationController {
+                    detailNavController.setViewControllers([next], animated: true)
+                }
+                else{
+                    splitVC.showDetailViewController(UINavigationController(rootViewController: next), sender: self)
+                }
+            }
+        }
+        else if self.navigationController != nil {
+            self.navigationController?.pushViewController(next, animated: true)
+        }
+    }
                
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
         
         let cellNib = UINib(nibName: "GetTeamsTableViewCell", bundle: nil)
         self.teamTableView.register(cellNib, forCellReuseIdentifier: "TEAMS_CELL_ID")

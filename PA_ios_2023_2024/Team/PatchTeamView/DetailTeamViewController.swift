@@ -7,8 +7,8 @@
 
 import UIKit
 
-/*class DetailTeamViewController: UIViewController {
-    
+class DetailTeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate, UITableViewDataSource {
+
     var team:Team!
     @IBOutlet weak var team_name: UILabel!
     
@@ -16,15 +16,15 @@ import UIKit
     @IBOutlet weak var employeTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.teams.count
+            return self.employesOfTeam.count
         }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let team = self.teams[indexPath.row]
+        let employe = self.employesOfTeam[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TEAMS_CELL_ID", for: indexPath) as! GetTeamsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EMPLOYES_TEAM_CELL_ID", for: indexPath) as! EmployeDetailTableViewCell
         
-        cell.reload(with: team )
+        cell.reload(with:employe)
         return cell
     }
         
@@ -35,9 +35,11 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cellNib = UINib(nibName: "GetTeamsTableViewCell", bundle: nil)
-        self.teamTableView.register(cellNib, forCellReuseIdentifier: "TEAMS_CELL_ID")
-        self.employesOfTeam.dataSource = self
+        team_name.text = team.teamName
+        
+        let cellNib = UINib(nibName: "EmployeDetailTableViewCell", bundle: nil)
+        self.employeTableView.register(cellNib, forCellReuseIdentifier: "EMPLOYES_TEAM_CELL_ID")
+        self.employeTableView.dataSource = self
         self.employeTableView.delegate = self
 
         fetchEmployeFromATeam()
@@ -65,10 +67,18 @@ import UIKit
         task.resume()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchEmployeFromATeam()
+    }
+    
     static func newInstance(team:Team)->DetailTeamViewController{
         let teamViewController = DetailTeamViewController()
         teamViewController.team = team
         return teamViewController
     }
-
-}*/
+    
+    @IBAction func changeEmploye(_ sender: Any) {
+        let next = ModifyEmployeViewController.newInstance(team:team)
+        self.navigationController?.pushViewController(next, animated: true)
+    }
+}

@@ -34,22 +34,33 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MLp-WG-864">
-                    <rect key="frame" x="0.0" y="179" width="810" height="901"/>
+                    <rect key="frame" x="0.0" y="260" width="810" height="820"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6i-Ai-Ak7">
+                    <rect key="frame" x="15" y="179" width="780" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Modfy your team ?" cornerStyle="capsule"/>
+                    <connections>
+                        <action selector="changeEmploye:" destination="-1" eventType="touchUpInside" id="YqJ-d1-QxJ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MLp-WG-864" secondAttribute="trailing" id="4UW-tW-iBn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C6i-Ai-Ak7" secondAttribute="trailing" constant="15" id="5nv-fb-1Ou"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fzH-Zl-PlX" secondAttribute="trailing" constant="10" id="AXk-I5-Tvs"/>
+                <constraint firstItem="MLp-WG-864" firstAttribute="top" secondItem="C6i-Ai-Ak7" secondAttribute="bottom" constant="50" id="Ehd-Tm-83h"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MLp-WG-864" secondAttribute="bottom" id="HfR-oz-bhV"/>
+                <constraint firstItem="C6i-Ai-Ak7" firstAttribute="top" secondItem="RnC-kG-t3m" secondAttribute="bottom" constant="50" id="LuF-lZ-ydf"/>
                 <constraint firstItem="RnC-kG-t3m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NlN-EJ-aq8"/>
                 <constraint firstItem="fzH-Zl-PlX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="O9r-eq-QpQ"/>
                 <constraint firstItem="RnC-kG-t3m" firstAttribute="top" secondItem="fzH-Zl-PlX" secondAttribute="bottom" constant="50" id="VWX-nk-q04"/>
                 <constraint firstItem="fzH-Zl-PlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Wyp-73-N0K"/>
                 <constraint firstItem="MLp-WG-864" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="m9l-si-Tw9"/>
-                <constraint firstItem="MLp-WG-864" firstAttribute="top" secondItem="RnC-kG-t3m" secondAttribute="bottom" constant="50" id="qrc-id-HtX"/>
+                <constraint firstItem="C6i-Ai-Ak7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="mzy-l8-g7I"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RnC-kG-t3m" secondAttribute="trailing" id="w3r-v9-3te"/>
             </constraints>
             <point key="canvasLocation" x="132" y="74"/>

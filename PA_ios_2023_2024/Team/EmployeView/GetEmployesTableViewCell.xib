@@ -51,6 +51,7 @@
             <connections>
                 <outlet property="date" destination="I6z-0Y-wxJ" id="zHf-P3-vTU"/>
                 <outlet property="lastAndFirstName" destination="XBH-Tz-Zah" id="U1q-xM-Kgg"/>
+                <outlet property="slider" destination="2sR-TJ-O6t" id="I2U-fX-rXk"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="76.004464285714278"/>
         </tableViewCell>

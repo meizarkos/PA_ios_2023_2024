@@ -7,21 +7,6 @@
 
 import UIKit
 
-
-class storeEmployeToAdd {
-    static let listEmploye = storeEmployeToAdd()
-    var employeToAdd:[String] = []
-    var employeToDelete:[String] = []
-
-    private init(){}
-    
-    func getChain(tab:[String])->String{
-        let chaine = tab.joined(separator: ",")
-        return chaine
-    }
-    
-}
-
 class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var employeTableView: UITableView!
@@ -106,12 +91,11 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
         semaphore.wait()
         
         let singletonChain:storeEmployeToAdd = storeEmployeToAdd.listEmploye
-        let chaineToAdd:String = singletonChain.getChain(tab: singletonChain.employeToAdd)
         
         
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         self.token = appdelegate.token
-        let url=URL(string: "https://helpother.fr/employeTeam/\(teamId)?ids=\(chaineToAdd)&idsDelete=")!
+        let url=URL(string: "https://helpother.fr/employeTeam/\(teamId)?ids=\(getChain(tab: singletonChain.employeToAdd))&idsDelete=")!
         
         var add = URLRequest(url: url)
         add.httpMethod = "POST"
