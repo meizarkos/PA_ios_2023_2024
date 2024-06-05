@@ -30,6 +30,27 @@ class UnsolvedTicketsViewController: UIViewController,UITextFieldDelegate,UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let next = ResponseViewController.newInstance(ticket:self.tickets[indexPath.row])
+        
+        if let splitVC = self.splitViewController {
+            if splitVC.isCollapsed {
+                self.navigationController?.pushViewController(next, animated: true)
+            }
+            else{
+                if let detailNavController = splitVC.viewControllers.last as? UINavigationController {
+                    detailNavController.setViewControllers([next], animated: true)
+                }
+                else{
+                    splitVC.showDetailViewController(UINavigationController(rootViewController: next), sender: self)
+                }
+            }
+        }
+        else if self.navigationController != nil {
+            self.navigationController?.pushViewController(next, animated: true)
+        }
+    }
                
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +64,8 @@ class UnsolvedTicketsViewController: UIViewController,UITextFieldDelegate,UITabl
     }
     
     func fetchTicket(){
-        let url = URL(string: "https://helpother.fr/unsolvedTickets")!
         
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        self.token = appdelegate.token
-        
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("BEARER \(self.token!)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        let request = request(url: "unsolvedTickets", verb: "GET")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, err in
             guard err == nil else{return}
@@ -63,7 +75,6 @@ class UnsolvedTicketsViewController: UIViewController,UITextFieldDelegate,UITabl
             guard let allTickets = json as? [[String:Any]] else{return}
             
             let tickets = allTickets.compactMap(Ticket.fromJSON(dict:))
-            
             self.tickets = tickets
             
             DispatchQueue.main.async {

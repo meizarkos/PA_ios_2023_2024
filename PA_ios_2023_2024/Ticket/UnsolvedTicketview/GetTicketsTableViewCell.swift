@@ -17,6 +17,6 @@ class GetTicketsTableViewCell: UITableViewCell {
     func reload(with ticket:Ticket){
         title.text = ticket.title
         payload.text = ticket.description
-        fromDate.text = "from \(ticket.creatorId) at \(ticket.createdAt)"
+        fromDate.text = "from \(ticket.creatorId) at \(removeLastCharacters(from:ticket.createdAt,number: 5))"
     }
 }
