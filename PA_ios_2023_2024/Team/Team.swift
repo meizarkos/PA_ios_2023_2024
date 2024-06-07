@@ -32,12 +32,12 @@ class Team {
         guard let uuid = (dict["uuid"] as? String),
               let teamName = (dict["team_name"] as? String),
               let createdAt = (dict["created_at"] as? String),
-              let updatedAt = (dict["updated_at"] as? String),
-              let numberOfEmploye = (dict["number_of_employe"] as? Int)
+              let updatedAt = (dict["updated_at"] as? String)
         else{
             return nil
         }
         
+        let numberOfEmploye = (dict["number_of_employe"] as? Int)
         
         return Team(uuid: uuid, teamName:teamName, numberOfEmploye:numberOfEmploye,createdAt: createdAt, updatedAt: updatedAt)
     }
