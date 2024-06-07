@@ -45,7 +45,7 @@ class DetailCompanyViewController: UIViewController {
             guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
             DispatchQueue.main.async {
-                
+                self.navigationController?.pushViewController(CompanyViewController(), animated: true)
             }
         }
         task.resume()

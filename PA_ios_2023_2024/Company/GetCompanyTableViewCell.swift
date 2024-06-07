@@ -26,4 +26,6 @@ class GetCompanyTableViewCell: UITableViewCell {
         }
         creation.text = removeLastCharacters(from: company.company_name, number: 5)
     }
+    
+    
 }

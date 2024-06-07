@@ -36,6 +36,14 @@
 		EC5E9D342BE010EE00E372D9 /* Employe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5E9D332BE010EE00E372D9 /* Employe.swift */; };
 		EC5E9D372BE014AB00E372D9 /* GetEmployesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5E9D352BE014AB00E372D9 /* GetEmployesTableViewCell.swift */; };
 		EC5E9D382BE014AB00E372D9 /* GetEmployesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5E9D362BE014AB00E372D9 /* GetEmployesTableViewCell.xib */; };
+		EC6034252C1366F80042D5FF /* Leave.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6034242C1366F80042D5FF /* Leave.swift */; };
+		EC6034272C1368200042D5FF /* LeaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6034262C1368200042D5FF /* LeaveView.swift */; };
+		EC60342B2C136BD60042D5FF /* LeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6034292C136BD60042D5FF /* LeaveViewController.swift */; };
+		EC60342C2C136BD60042D5FF /* LeaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC60342A2C136BD60042D5FF /* LeaveViewController.xib */; };
+		EC6034312C1370860042D5FF /* LeaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC60342F2C1370860042D5FF /* LeaveTableViewCell.swift */; };
+		EC6034322C1370860042D5FF /* LeaveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6034302C1370860042D5FF /* LeaveTableViewCell.xib */; };
+		EC60343A2C1378830042D5FF /* DetailLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6034382C1378830042D5FF /* DetailLeaveViewController.swift */; };
+		EC60343B2C1378830042D5FF /* DetailLeaveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC6034392C1378830042D5FF /* DetailLeaveViewController.xib */; };
 		EC986F6F2C0A26E60015126D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC986F6E2C0A26E60015126D /* API.swift */; };
 		EC986F712C0A29A80015126D /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC986F702C0A29A80015126D /* Company.swift */; };
 		EC986F742C0A2C5F0015126D /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC986F722C0A2C5F0015126D /* CompanyViewController.swift */; };
@@ -86,6 +94,14 @@
 		EC5E9D332BE010EE00E372D9 /* Employe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employe.swift; sourceTree = "<group>"; };
 		EC5E9D352BE014AB00E372D9 /* GetEmployesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmployesTableViewCell.swift; sourceTree = "<group>"; };
 		EC5E9D362BE014AB00E372D9 /* GetEmployesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetEmployesTableViewCell.xib; sourceTree = "<group>"; };
+		EC6034242C1366F80042D5FF /* Leave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave.swift; sourceTree = "<group>"; };
+		EC6034262C1368200042D5FF /* LeaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveView.swift; sourceTree = "<group>"; };
+		EC6034292C136BD60042D5FF /* LeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveViewController.swift; sourceTree = "<group>"; };
+		EC60342A2C136BD60042D5FF /* LeaveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaveViewController.xib; sourceTree = "<group>"; };
+		EC60342F2C1370860042D5FF /* LeaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveTableViewCell.swift; sourceTree = "<group>"; };
+		EC6034302C1370860042D5FF /* LeaveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaveTableViewCell.xib; sourceTree = "<group>"; };
+		EC6034382C1378830042D5FF /* DetailLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLeaveViewController.swift; sourceTree = "<group>"; };
+		EC6034392C1378830042D5FF /* DetailLeaveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailLeaveViewController.xib; sourceTree = "<group>"; };
 		EC986F6E2C0A26E60015126D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		EC986F702C0A29A80015126D /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		EC986F722C0A2C5F0015126D /* CompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +199,37 @@
 			path = CreateResponseView;
 			sourceTree = "<group>";
 		};
+		EC6034212C1362E40042D5FF /* leave */ = {
+			isa = PBXGroup;
+			children = (
+				EC6034332C1377D20042D5FF /* DetailLeaveview */,
+				EC6034282C136BC60042D5FF /* LeaveView */,
+				EC6034242C1366F80042D5FF /* Leave.swift */,
+				EC6034262C1368200042D5FF /* LeaveView.swift */,
+			);
+			path = leave;
+			sourceTree = "<group>";
+		};
+		EC6034282C136BC60042D5FF /* LeaveView */ = {
+			isa = PBXGroup;
+			children = (
+				EC6034292C136BD60042D5FF /* LeaveViewController.swift */,
+				EC60342A2C136BD60042D5FF /* LeaveViewController.xib */,
+				EC60342F2C1370860042D5FF /* LeaveTableViewCell.swift */,
+				EC6034302C1370860042D5FF /* LeaveTableViewCell.xib */,
+			);
+			path = LeaveView;
+			sourceTree = "<group>";
+		};
+		EC6034332C1377D20042D5FF /* DetailLeaveview */ = {
+			isa = PBXGroup;
+			children = (
+				EC6034382C1378830042D5FF /* DetailLeaveViewController.swift */,
+				EC6034392C1378830042D5FF /* DetailLeaveViewController.xib */,
+			);
+			path = DetailLeaveview;
+			sourceTree = "<group>";
+		};
 		EC986F6C2C0A26010015126D /* Company */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				EC986F6D2C0A26D30015126D /* utils */,
+				EC6034212C1362E40042D5FF /* leave */,
 				EC986F6C2C0A26010015126D /* Company */,
 				ECF10F072BF5F4780097A3A7 /* Ticket */,
 				ECF10F062BF5F4320097A3A7 /* Team */,
@@ -343,9 +391,12 @@
 				EC5E9D242BDFF5C100E372D9 /* TeamViewController.xib in Resources */,
 				EC5E9D2E2BE002A400E372D9 /* CreateTeamViewController.xib in Resources */,
 				EC4B7E8F2C10D12A00B6529B /* CreateResponseViewController.xib in Resources */,
+				EC6034322C1370860042D5FF /* LeaveTableViewCell.xib in Resources */,
 				EC35D92D2C0E2E8A002E965D /* ModifyEmployeViewController.xib in Resources */,
 				ECA06F4E2BD9634700D12959 /* LaunchScreen.storyboard in Resources */,
 				ECA06F4B2BD9634700D12959 /* Assets.xcassets in Resources */,
+				EC60342C2C136BD60042D5FF /* LeaveViewController.xib in Resources */,
+				EC60343B2C1378830042D5FF /* DetailLeaveViewController.xib in Resources */,
 				EC09FFE92C0B2254007C4D45 /* DetailTeamViewController.xib in Resources */,
 				ECA06F582BD964F200D12959 /* HomeViewController.xib in Resources */,
 				EC4B7E872C10C53400B6529B /* ResponseViewController.xib in Resources */,
@@ -381,15 +432,20 @@
 				EC986F712C0A29A80015126D /* Company.swift in Sources */,
 				ECA06F5B2BD96DFD00D12959 /* AccueilViewController.swift in Sources */,
 				EC5E9D342BE010EE00E372D9 /* Employe.swift in Sources */,
+				EC6034252C1366F80042D5FF /* Leave.swift in Sources */,
 				EC4B7E862C10C53400B6529B /* ResponseViewController.swift in Sources */,
 				EC5E9D232BDFF5C100E372D9 /* TeamViewController.swift in Sources */,
 				EC986F7A2C0A2C9B0015126D /* GetCompanyTableViewCell.swift in Sources */,
+				EC6034312C1370860042D5FF /* LeaveTableViewCell.swift in Sources */,
 				EC4B7E832C10C30600B6529B /* Response.swift in Sources */,
 				EC986F742C0A2C5F0015126D /* CompanyViewController.swift in Sources */,
 				EC5E9D292BDFF80900E372D9 /* GetTeamsTableViewCell.swift in Sources */,
 				EC5E9D312BE005C900E372D9 /* AddEmployeViewController.swift in Sources */,
+				EC6034272C1368200042D5FF /* LeaveView.swift in Sources */,
+				EC60343A2C1378830042D5FF /* DetailLeaveViewController.swift in Sources */,
 				EC5E9D2D2BE002A400E372D9 /* CreateTeamViewController.swift in Sources */,
 				EC35D9282C0E1F76002E965D /* EmployeDetailTableViewCell.swift in Sources */,
+				EC60342B2C136BD60042D5FF /* LeaveViewController.swift in Sources */,
 				EC09FFE42C0B111A007C4D45 /* DetailCompanyViewController.swift in Sources */,
 				EC4B7E8A2C10C88C00B6529B /* ResponseTableViewCell.swift in Sources */,
 				EC35D92C2C0E2E8A002E965D /* ModifyEmployeViewController.swift in Sources */,
