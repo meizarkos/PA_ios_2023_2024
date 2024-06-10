@@ -8,22 +8,64 @@
 import UIKit
 
 class AccueilViewController: UIViewController {
-
+    
+    @IBOutlet weak var numberOfTicket: UILabel!
+    @IBOutlet weak var leaveNumber: UILabel!
+    @IBOutlet weak var companyToValid: UILabel!
+    @IBOutlet weak var teamActive: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.navigationItem.hidesBackButton = true
+        
+        let request = request(url: "allAdminData", verb: "GET")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, err in
+            guard err == nil else{return}
+            guard let dataIsNotNull = data else{return}
+            guard let json = try? JSONSerialization.jsonObject(with: dataIsNotNull) else{return}
+            
+            guard let adminData = json as? [String:Int] else{return}
+            
+            DispatchQueue.main.async {
+                self.numberOfTicket.text = "Ticket to solve : \(adminData["ticketNumber"] ?? 0)"
+                self.leaveNumber.text = "Number of leave pending : \(adminData["leaveNumber"] ?? 0)"
+                self.companyToValid.text = "Company waiting for validation : \(adminData["companyNumber"] ?? 0)"
+                self.teamActive.text = "Team active : \(adminData["teamNumber"] ?? 0)"
+            }
+        }
+        task.resume()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func ticketView(_ sender: Any) {
+        self.navigationController?.pushViewController(UnsolvedTicketsViewController(), animated: true)
     }
-    */
-
+    
+    @IBAction func leaveView(_ sender: Any) {
+        self.navigationController?.pushViewController(LeaveViewController(), animated: true)
+    }
+    
+    @IBAction func companyView(_ sender: Any) {
+        self.navigationController?.pushViewController(CompanyViewController(), animated: true)
+    }
+    
+    @IBAction func teamView(_ sender: Any) {
+        let splitVC = UISplitViewController()
+        
+        splitVC.viewControllers = [TeamViewController(),UIViewController()]
+        
+        let tabBarControl = UITabBarController()
+    
+        tabBarControl.viewControllers = [
+            splitVC,
+        ]
+        
+        self.navigationController?.pushViewController(tabBarControl, animated: true)
+    }
+    
+    @IBAction func deco(_ sender: Any) {
+        exit(1)
+    }
+    
 }
