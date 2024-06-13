@@ -20,31 +20,39 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeS-da-Pa9">
+                    <rect key="frame" x="25" y="45" width="182.5" height="42"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-tC-YPJ">
-                    <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
+                    <rect key="frame" x="15" y="137" width="994" height="1129"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-AQ-CS3">
-                    <rect key="frame" x="20" y="1300" width="984" height="31"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGV-ec-zie">
+                    <rect key="frame" x="15" y="1310" width="994" height="31"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Create a team" cornerStyle="capsule"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Create team"/>
                     <connections>
-                        <action selector="createTeam:" destination="-1" eventType="touchUpInside" id="G0V-xJ-QvO"/>
+                        <action selector="createTeam:" destination="-1" eventType="touchUpInside" id="XlU-Oo-soG"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Va6-tC-YPJ" secondAttribute="bottom" id="EtK-TC-UrM"/>
-                <constraint firstItem="Va6-tC-YPJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OG9-DF-uEG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hcO-AQ-CS3" secondAttribute="bottom" constant="35" id="Yir-1L-mS9"/>
-                <constraint firstItem="Va6-tC-YPJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aKg-e3-75A"/>
-                <constraint firstItem="hcO-AQ-CS3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oOM-su-KUa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Va6-tC-YPJ" secondAttribute="trailing" id="wMN-pD-dwJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hcO-AQ-CS3" secondAttribute="trailing" constant="20" id="y2q-Hd-K5x"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Va6-tC-YPJ" secondAttribute="trailing" constant="15" id="387-zS-xA9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nGV-ec-zie" secondAttribute="trailing" constant="15" id="FrY-Km-ldP"/>
+                <constraint firstItem="nGV-ec-zie" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="WnA-jq-PJ3"/>
+                <constraint firstItem="nGV-ec-zie" firstAttribute="top" secondItem="Va6-tC-YPJ" secondAttribute="bottom" constant="44" id="c8Y-7a-lcU"/>
+                <constraint firstItem="Va6-tC-YPJ" firstAttribute="top" secondItem="SeS-da-Pa9" secondAttribute="bottom" constant="50" id="ddI-OL-9Yp"/>
+                <constraint firstItem="SeS-da-Pa9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="j2E-aU-8SK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nGV-ec-zie" secondAttribute="bottom" constant="25" id="pe6-Qk-gCH"/>
+                <constraint firstItem="Va6-tC-YPJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="teW-w8-bFN"/>
+                <constraint firstItem="SeS-da-Pa9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="zBb-iX-geg"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="42"/>
+            <point key="canvasLocation" x="131.8359375" y="41.727672035139086"/>
         </view>
     </objects>
     <resources>

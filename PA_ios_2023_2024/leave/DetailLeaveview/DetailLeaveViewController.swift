@@ -10,6 +10,7 @@ import UIKit
 class DetailLeaveViewController: UIViewController {
     
     var leaveView:LeaveView!
+    @IBOutlet weak var leaveName: UILabel!
     @IBOutlet weak var bigDescription: UITextView!
     
     override func viewDidLoad() {
@@ -32,7 +33,9 @@ class DetailLeaveViewController: UIViewController {
             textTeam = "He/She isn't in any team"
         }
         
-        bigDescription.text = "The employe \(employe.lastName) \(employe.firstName) who has worked for us since \(removeLastCharacters(from: employe.createdAt, number: 5)) and has a status of \(employe.role), would like to go on vacation.\n\n\(textTeam)\n\nHe would like to leave on \(removeLastCharacters(from:leave.start_date, number: 14)) and come back on \(removeLastCharacters(from: leave.end_date, number: 14))\n\n\n\nLeave date : \(removeLastCharacters(from: leave.start_date, number: 14))\n\nReturn \(removeLastCharacters(from: leave.end_date, number: 14)) \n\nFor employe : \(employe.lastName) \(employe.firstName)"
+        leaveName.text = "\(employe.lastName) \(employe.firstName)"
+        
+        bigDescription.text = "The employe \(employe.lastName) \(employe.firstName)\nwho has worked for us since \(removeLastCharacters(from: employe.createdAt, number: 14))\nand has a status of \(employe.role), would like to go on vacation.\n\n\(textTeam)\n\nHe would like to leave on \(removeLastCharacters(from:leave.start_date, number: 14))\nand come back on \(removeLastCharacters(from: leave.end_date, number: 14))\n\n\n\nLeave date : \(removeLastCharacters(from: leave.start_date, number: 14))\n\nReturn \(removeLastCharacters(from: leave.end_date, number: 14)) \n\nFor employe : \(employe.lastName) \(employe.firstName)"
         
     }
     
@@ -45,7 +48,7 @@ class DetailLeaveViewController: UIViewController {
             guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(LeaveViewController(), animated: true)
+                createVC(goTo: LeaveViewController(), actu: self)
             }
         }
         task.resume()

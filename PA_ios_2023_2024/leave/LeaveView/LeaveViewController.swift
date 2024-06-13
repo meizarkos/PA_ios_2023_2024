@@ -33,22 +33,7 @@ class LeaveViewController: UIViewController,UITextFieldDelegate,UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let next = DetailLeaveViewController.newInstance(leaveView: self.all[indexPath.row])
         
-        if let splitVC = self.splitViewController {
-            if splitVC.isCollapsed {
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else{
-                if let detailNavController = splitVC.viewControllers.last as? UINavigationController {
-                    detailNavController.setViewControllers([next], animated: true)
-                }
-                else{
-                    splitVC.showDetailViewController(UINavigationController(rootViewController: next), sender: self)
-                }
-            }
-        }
-        else if self.navigationController != nil {
-            self.navigationController?.pushViewController(next, animated: true)
-        }
+        reloadVC(next: next, actu: self)
     }
     
     override func viewDidLoad() {

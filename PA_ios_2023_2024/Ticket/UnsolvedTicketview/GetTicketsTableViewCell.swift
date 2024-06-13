@@ -10,13 +10,11 @@ import UIKit
 class GetTicketsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var payload: UITextView!
-    @IBOutlet weak var fromDate: UILabel!
-    
+    @IBOutlet weak var description1: UILabel!
     
     func reload(with ticket:Ticket){
         title.text = ticket.title
-        payload.text = ticket.description
-        fromDate.text = "from \(ticket.creatorId) at \(removeLastCharacters(from:ticket.createdAt,number: 5))"
+        description1.text = ticket.description
+        
     }
 }

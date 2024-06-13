@@ -11,23 +11,25 @@ class DetailCompanyViewController: UIViewController {
     
     var company:Company!
 
-    @IBOutlet weak var company_name: UILabel!
-    @IBOutlet weak var phone: UILabel!
-    @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var textData: UITextView!
     
+    @IBOutlet weak var company_name: UILabel!
+    @IBOutlet weak var textData: UITextView!
+    var email:String = ""
+    var phone:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textData.layer.cornerRadius = 10
+        textData.layer.masksToBounds = true
         self.company_name.text = company.company_name
         if let phone = company.phone{
-            self.phone.text = "Contact phone : \(phone)"
+            self.phone = "Contact phone : \(phone)"
         }
         else{
-            self.phone.text = "No phone provided"
+            self.phone = "No phone provided"
         }
-        self.email.text = "Email : \(company.email)"
-        self.textData.text = "The companie enter the SIRET NUMBER : \(company.siret_number).\n\n It is located at \(company.location). \n\n It has created his account on \(removeLastCharacters(from: company.created_at,number: 5)). \n If you think these data are correct you can validate the company. Thus allowing it to post his announce."
+        self.email = "Email : \(company.email)"
+        self.textData.text = "The companie enter the SIRET NUMBER : \(company.siret_number).\n\nIt is located at \(company.location).\n\n\(email)\n\(phone)\n\nIt has created his account on \(removeLastCharacters(from: company.created_at,number: 14)). \n\nIf you think these data are correct you can validate the company. Thus allowing it to post his announce."
     }
     
     static func newInstance(company:Company)->DetailCompanyViewController{
@@ -45,7 +47,7 @@ class DetailCompanyViewController: UIViewController {
             guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(CompanyViewController(), animated: true)
+                createVC(goTo: CompanyViewController(), actu: self)
             }
         }
         task.resume()

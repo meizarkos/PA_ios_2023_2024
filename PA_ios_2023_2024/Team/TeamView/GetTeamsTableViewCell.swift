@@ -17,6 +17,5 @@ class GetTeamsTableViewCell: UITableViewCell {
     func reload(with team:Team){
         teamName.text = team.teamName
         NumberDate.text = "Compose of \(team.numberOfEmploye ?? 0) employe"
-        created.text = "Since \(removeLastCharacters(from: team.createdAt, number: 5))"
     }
 }

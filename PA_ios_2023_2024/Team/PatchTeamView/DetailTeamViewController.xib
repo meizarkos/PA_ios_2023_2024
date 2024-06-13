@@ -21,49 +21,48 @@
             <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzH-Zl-PlX">
-                    <rect key="frame" x="10" y="20" width="790" height="35"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votre équipe est composé de  : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnC-kG-t3m">
-                    <rect key="frame" x="0.0" y="105" width="810" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzH-Zl-PlX">
+                    <rect key="frame" x="25" y="45" width="775" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MLp-WG-864">
-                    <rect key="frame" x="0.0" y="260" width="810" height="820"/>
+                    <rect key="frame" x="15" y="180" width="780" height="875"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6i-Ai-Ak7">
-                    <rect key="frame" x="15" y="179" width="780" height="31"/>
+                    <rect key="frame" x="640.5" y="45" width="144.5" height="31"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Modfy your team ?" cornerStyle="capsule"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Modfy your team ?" cornerStyle="small"/>
                     <connections>
                         <action selector="changeEmploye:" destination="-1" eventType="touchUpInside" id="YqJ-d1-QxJ"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The employe(s) are :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3IB-vc-YoJ">
+                    <rect key="frame" x="25" y="131" width="760" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MLp-WG-864" secondAttribute="trailing" id="4UW-tW-iBn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C6i-Ai-Ak7" secondAttribute="trailing" constant="15" id="5nv-fb-1Ou"/>
+                <constraint firstItem="MLp-WG-864" firstAttribute="top" secondItem="3IB-vc-YoJ" secondAttribute="bottom" constant="25" id="0qy-SX-2zF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MLp-WG-864" secondAttribute="trailing" constant="15" id="4UW-tW-iBn"/>
+                <constraint firstItem="3IB-vc-YoJ" firstAttribute="top" secondItem="fzH-Zl-PlX" secondAttribute="bottom" constant="50" id="8Ni-dt-Nol"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C6i-Ai-Ak7" secondAttribute="trailing" constant="25" id="8bK-Og-79x"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fzH-Zl-PlX" secondAttribute="trailing" constant="10" id="AXk-I5-Tvs"/>
-                <constraint firstItem="MLp-WG-864" firstAttribute="top" secondItem="C6i-Ai-Ak7" secondAttribute="bottom" constant="50" id="Ehd-Tm-83h"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MLp-WG-864" secondAttribute="bottom" id="HfR-oz-bhV"/>
-                <constraint firstItem="C6i-Ai-Ak7" firstAttribute="top" secondItem="RnC-kG-t3m" secondAttribute="bottom" constant="50" id="LuF-lZ-ydf"/>
-                <constraint firstItem="RnC-kG-t3m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NlN-EJ-aq8"/>
-                <constraint firstItem="fzH-Zl-PlX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="O9r-eq-QpQ"/>
-                <constraint firstItem="RnC-kG-t3m" firstAttribute="top" secondItem="fzH-Zl-PlX" secondAttribute="bottom" constant="50" id="VWX-nk-q04"/>
-                <constraint firstItem="fzH-Zl-PlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Wyp-73-N0K"/>
-                <constraint firstItem="MLp-WG-864" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="m9l-si-Tw9"/>
-                <constraint firstItem="C6i-Ai-Ak7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="mzy-l8-g7I"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RnC-kG-t3m" secondAttribute="trailing" id="w3r-v9-3te"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MLp-WG-864" secondAttribute="bottom" constant="25" id="HfR-oz-bhV"/>
+                <constraint firstItem="fzH-Zl-PlX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="O9r-eq-QpQ"/>
+                <constraint firstItem="fzH-Zl-PlX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Wyp-73-N0K"/>
+                <constraint firstItem="MLp-WG-864" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="m9l-si-Tw9"/>
+                <constraint firstItem="3IB-vc-YoJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="vu0-yX-Qwc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3IB-vc-YoJ" secondAttribute="trailing" constant="25" id="zOy-VB-EZ7"/>
+                <constraint firstItem="C6i-Ai-Ak7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="zrm-73-PP6"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="74"/>
+            <point key="canvasLocation" x="131.85185185185185" y="73.888888888888886"/>
         </view>
     </objects>
     <resources>

@@ -12,19 +12,18 @@ class CreateResponseViewController: UIViewController {
     var ticket:Ticket!
     @IBOutlet weak var ticketTitle: UILabel!
     @IBOutlet weak var ticketDescription: UILabel!
-    @IBOutlet weak var responseValue: UITextField!
+    @IBOutlet weak var responseValue: UITextView!
     @IBOutlet weak var errorValue: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         errorValue.text = ""
         ticketTitle.text = ticket.title
-        ticketTitle.layer.cornerRadius = 15
-        ticketTitle.layer.masksToBounds = true
         
-        ticketDescription.layer.cornerRadius = 10
-        ticketDescription.layer.masksToBounds = true
-        ticketDescription.text = "\n \(ticket.description)\n Created at \(removeLastCharacters(from:ticket.createdAt,number:5))\n"
+        ticketDescription.text = "Description : \(ticket.description)\n\nCreated at \(removeLastCharacters(from:ticket.createdAt,number:5))\n"
+        responseValue.text = "Hello dear customer,\n\n"
+        responseValue.layer.cornerRadius = 10
+        responseValue.layer.masksToBounds = true
     }
     
     
@@ -45,8 +44,8 @@ class CreateResponseViewController: UIViewController {
             guard let dataIsNotNull = data else{return}
             guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
-            DispatchQueue.main.async {
-                self.navigationController?.pushViewController(UnsolvedTicketsViewController(), animated: true)
+            DispatchQueue.main.async { [self] in
+                createTwoScreensVC(goTo: UnsolvedTicketsViewController(), secondGoTo: ResponseViewController.newInstance(ticket: self.ticket), actu: self)
             }
         }
         task.resume()

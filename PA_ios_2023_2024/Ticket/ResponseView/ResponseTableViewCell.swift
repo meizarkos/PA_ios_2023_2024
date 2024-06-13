@@ -16,7 +16,8 @@ class ResponseTableViewCell: UITableViewCell {
     func reload(with response:Response){
         if(response.status == "user"){
             client.text = response.description
-            client.backgroundColor = UIColor.blue
+            client.backgroundColor = UIColor.systemBlue
+            me.backgroundColor = UIColor.white
             client.layer.cornerRadius = 10
             client.layer.masksToBounds = true
             me.text = ""
@@ -27,6 +28,7 @@ class ResponseTableViewCell: UITableViewCell {
             me.layer.masksToBounds = true
             client.text = ""
             client.backgroundColor = UIColor.white
+            me.backgroundColor = UIColor.systemGray5
         }
     }
 }

@@ -9,22 +9,14 @@ import UIKit
 
 class GetCompanyTableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var company_name: UILabel!
     @IBOutlet weak var siret_number: UILabel!
-    @IBOutlet weak var phone: UILabel!
-    @IBOutlet weak var creation: UILabel!
     
     
     func reload(with company:Company){
         company_name.text = company.company_name
         siret_number.text = "Siret number : \(company.siret_number)"
-        if let phone = company.phone {
-            self.phone.text = "Phone : \(phone)"
-        }
-        else{
-            self.phone.text = "No phone provided"
-        }
-        creation.text = removeLastCharacters(from: company.company_name, number: 5)
     }
     
     

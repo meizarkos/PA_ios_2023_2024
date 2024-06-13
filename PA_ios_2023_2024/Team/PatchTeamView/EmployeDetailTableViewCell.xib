@@ -18,21 +18,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig6-3Q-bB3">
-                        <rect key="frame" x="15" y="10" width="290" height="24"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgd-vU-87Y">
-                        <rect key="frame" x="31" y="49" width="258" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTB-yY-7ul">
-                        <rect key="frame" x="31" y="95" width="258" height="100"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <rect key="frame" x="31" y="31" width="258" height="169"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -40,22 +28,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="eTB-yY-7ul" secondAttribute="trailing" constant="15" id="Dgj-8S-Zns"/>
+                    <constraint firstItem="eTB-yY-7ul" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="KLA-hH-mbJ"/>
                     <constraint firstItem="eTB-yY-7ul" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="L1I-BU-tgt"/>
-                    <constraint firstItem="eTB-yY-7ul" firstAttribute="top" secondItem="Hgd-vU-87Y" secondAttribute="bottom" constant="25" id="LHO-k8-xUY"/>
-                    <constraint firstAttribute="trailing" secondItem="ig6-3Q-bB3" secondAttribute="trailing" constant="15" id="LaH-oU-f4m"/>
-                    <constraint firstAttribute="bottom" secondItem="eTB-yY-7ul" secondAttribute="bottom" constant="25" id="UrY-tM-VyJ"/>
-                    <constraint firstItem="Hgd-vU-87Y" firstAttribute="top" secondItem="ig6-3Q-bB3" secondAttribute="bottom" constant="15" id="eWy-ZG-0Ef"/>
-                    <constraint firstItem="Hgd-vU-87Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="hDc-Fx-O7S"/>
-                    <constraint firstItem="ig6-3Q-bB3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="oDM-Jt-2o0"/>
-                    <constraint firstItem="ig6-3Q-bB3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xbT-ti-ShX"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Hgd-vU-87Y" secondAttribute="trailing" constant="15" id="yqZ-Fz-Iok"/>
+                    <constraint firstAttribute="bottom" secondItem="eTB-yY-7ul" secondAttribute="bottom" constant="20" id="UrY-tM-VyJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="finition" destination="eTB-yY-7ul" id="MgR-1w-Afn"/>
-                <outlet property="intro" destination="ig6-3Q-bB3" id="T18-sy-8Pr"/>
-                <outlet property="ticket_solved" destination="Hgd-vU-87Y" id="QLE-1t-bBv"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="118.52678571428571"/>
         </tableViewCell>
@@ -64,8 +44,8 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -21,32 +21,35 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="csi-eb-Pe0">
-                    <rect key="frame" x="0.0" y="24" width="820" height="1036"/>
+                    <rect key="frame" x="15" y="135" width="820" height="1010"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJs-8Z-nLF">
-                    <rect key="frame" x="15" y="1060" width="790" height="61"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your employe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9t-Jn-Mke">
+                    <rect key="frame" x="25" y="49" width="252" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f15-Nc-t1x">
+                    <rect key="frame" x="663" y="49" width="132" height="31"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Add employe" cornerStyle="capsule"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Confirm creation"/>
                     <connections>
-                        <action selector="addEmploye:" destination="-1" eventType="touchUpInside" id="oyg-S3-eqv"/>
+                        <action selector="addEmploye:" destination="-1" eventType="touchUpInside" id="6dq-CS-Mqx"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="csi-eb-Pe0" secondAttribute="trailing" id="4F9-f0-GJc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eJs-8Z-nLF" secondAttribute="bottom" constant="39" id="6u5-Ou-9RL"/>
-                <constraint firstItem="csi-eb-Pe0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E8o-bw-NRj"/>
-                <constraint firstItem="eJs-8Z-nLF" firstAttribute="top" secondItem="csi-eb-Pe0" secondAttribute="bottom" id="G5Z-gI-OVO"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="csi-eb-Pe0" secondAttribute="bottom" constant="100" id="GNl-RG-3N3"/>
-                <constraint firstItem="eJs-8Z-nLF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JiO-nI-OUH"/>
-                <constraint firstItem="csi-eb-Pe0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Myt-h4-yoP"/>
-                <constraint firstItem="csi-eb-Pe0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Uts-sq-VVp"/>
-                <constraint firstItem="csi-eb-Pe0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aS1-pO-igI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eJs-8Z-nLF" secondAttribute="trailing" constant="15" id="kaw-Rd-lum"/>
-                <constraint firstItem="eJs-8Z-nLF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="n3S-yO-zaz"/>
+                <constraint firstItem="csi-eb-Pe0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="7a9-UB-tcG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f15-Nc-t1x" secondAttribute="trailing" constant="25" id="Fgh-oT-8as"/>
+                <constraint firstItem="s9t-Jn-Mke" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="GOV-JI-BHt"/>
+                <constraint firstItem="s9t-Jn-Mke" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="JeA-UT-KlC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="csi-eb-Pe0" secondAttribute="bottom" constant="15" id="Nwa-Wz-Fbi"/>
+                <constraint firstItem="csi-eb-Pe0" firstAttribute="top" secondItem="s9t-Jn-Mke" secondAttribute="bottom" constant="50" id="k7y-ur-kkd"/>
+                <constraint firstItem="csi-eb-Pe0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="15" id="lWC-L8-e9f"/>
+                <constraint firstItem="f15-Nc-t1x" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="mpJ-6C-nY3"/>
             </constraints>
             <point key="canvasLocation" x="132" y="56"/>
         </view>

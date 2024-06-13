@@ -11,6 +11,7 @@ class ResponseViewController: UIViewController,UITextFieldDelegate,UITableViewDe
     
     @IBOutlet weak var ticketDescription: UILabel!
     @IBOutlet weak var ticketTitle: UILabel!
+    
     var ticket:Ticket!
 
     @IBOutlet weak var responseTableView: UITableView!
@@ -31,19 +32,17 @@ class ResponseViewController: UIViewController,UITextFieldDelegate,UITableViewDe
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let response = self.responses[indexPath.row]
-        return CGFloat(response.description.count*2)
+        return CGFloat((response.description.count*2/10)+100)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ticketTitle.text = ticket.title
-        ticketTitle.layer.cornerRadius = 15
-        ticketTitle.layer.masksToBounds = true
         
         ticketDescription.layer.cornerRadius = 10
         ticketDescription.layer.masksToBounds = true
-        ticketDescription.text = "\n \(ticket.description)\n Created at \(removeLastCharacters(from:ticket.createdAt,number:5))\n"
+        ticketDescription.text = "Description : \(ticket.description)\n\nCreated at \(removeLastCharacters(from:ticket.createdAt,number:14))\n"
         
         let cellNib = UINib(nibName: "ResponseTableViewCell", bundle: nil)
         self.responseTableView.register(cellNib, forCellReuseIdentifier: "RESPONSES_CELL_ID")
@@ -98,7 +97,7 @@ class ResponseViewController: UIViewController,UITextFieldDelegate,UITableViewDe
             guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(UnsolvedTicketsViewController(), animated: true)
+                createVC(goTo: UnsolvedTicketsViewController(), actu: self)
             }
         }
         task.resume()

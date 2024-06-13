@@ -109,7 +109,7 @@ class AddEmployeViewController: UIViewController,UITextFieldDelegate,UITableView
             guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(TeamViewController(), animated: true)
+                createVC(goTo: TeamViewController(), actu: self)
             }
         }
         addEmploye.resume()

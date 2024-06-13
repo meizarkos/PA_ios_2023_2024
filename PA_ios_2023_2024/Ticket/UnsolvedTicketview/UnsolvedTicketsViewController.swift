@@ -28,28 +28,13 @@ class UnsolvedTicketsViewController: UIViewController,UITextFieldDelegate,UITabl
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 200
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let next = ResponseViewController.newInstance(ticket:self.tickets[indexPath.row])
         
-        if let splitVC = self.splitViewController {
-            if splitVC.isCollapsed {
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else{
-                if let detailNavController = splitVC.viewControllers.last as? UINavigationController {
-                    detailNavController.setViewControllers([next], animated: true)
-                }
-                else{
-                    splitVC.showDetailViewController(UINavigationController(rootViewController: next), sender: self)
-                }
-            }
-        }
-        else if self.navigationController != nil {
-            self.navigationController?.pushViewController(next, animated: true)
-        }
+        reloadVC(next: next, actu: self)
     }
                
     override func viewDidLoad() {
@@ -76,6 +61,8 @@ class UnsolvedTicketsViewController: UIViewController,UITextFieldDelegate,UITabl
             
             let tickets = allTickets.compactMap(Ticket.fromJSON(dict:))
             self.tickets = tickets
+            
+            print(tickets)
             
             DispatchQueue.main.async {
                 self.ticketTableView.reloadData()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -17,21 +17,29 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GQe-kv-x2U">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="15" y="131" width="804" height="956"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Companies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l96-i1-saZ">
+                    <rect key="frame" x="25" y="45" width="159" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="GQe-kv-x2U" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GCf-aW-b5e"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GQe-kv-x2U" secondAttribute="trailing" id="ODK-2h-s6D"/>
-                <constraint firstItem="GQe-kv-x2U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bn5-jW-mvW"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GQe-kv-x2U" secondAttribute="bottom" id="cP3-9c-egP"/>
+                <constraint firstItem="l96-i1-saZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="5wc-qB-Egb"/>
+                <constraint firstItem="GQe-kv-x2U" firstAttribute="top" secondItem="l96-i1-saZ" secondAttribute="bottom" constant="50" id="92H-lz-VBh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GQe-kv-x2U" secondAttribute="trailing" constant="15" id="ODK-2h-s6D"/>
+                <constraint firstItem="l96-i1-saZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="TWC-T3-zPy"/>
+                <constraint firstItem="GQe-kv-x2U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="bn5-jW-mvW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GQe-kv-x2U" secondAttribute="bottom" constant="25" id="cP3-9c-egP"/>
             </constraints>
             <point key="canvasLocation" x="131.91964285714286" y="63.768115942028992"/>
         </view>

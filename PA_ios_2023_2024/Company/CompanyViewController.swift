@@ -32,22 +32,7 @@ class CompanyViewController: UIViewController,UITextFieldDelegate,UITableViewDel
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let next = DetailCompanyViewController.newInstance(company: self.companies[indexPath.row])
         
-        if let splitVC = self.splitViewController {
-            if splitVC.isCollapsed {
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else{
-                if let detailNavController = splitVC.viewControllers.last as? UINavigationController {
-                    detailNavController.setViewControllers([next], animated: true)
-                }
-                else{
-                    splitVC.showDetailViewController(UINavigationController(rootViewController: next), sender: self)
-                }
-            }
-        }
-        else if self.navigationController != nil {
-            self.navigationController?.pushViewController(next, animated: true)
-        }
+        reloadVC(next: next, actu: self)
     }
     
     
@@ -76,6 +61,8 @@ class CompanyViewController: UIViewController,UITextFieldDelegate,UITableViewDel
             let companies = allCompanies.compactMap(Company.fromJSON(dict:))
             
             self.companies = companies
+            
+            print(companies)
             
             DispatchQueue.main.async {
                 self.companiesTableView.reloadData()

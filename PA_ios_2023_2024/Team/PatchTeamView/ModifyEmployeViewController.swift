@@ -67,7 +67,7 @@ class ModifyEmployeViewController: UIViewController,UITextFieldDelegate,UITableV
         
     }
 
-    @IBAction func add(_ sender: Any) {
+    @IBAction func confirmChange(_ sender: Any) {
         let request = request(url: "employeTeam/\(team.uuid)?ids=\(getChain(tab: storeEmployeToAdd.listEmploye.employeToAdd))&idsDelete=\(getChain(tab: storeEmployeToAdd.listEmploye.employeToDelete))", verb: "POST")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, err in
@@ -76,11 +76,12 @@ class ModifyEmployeViewController: UIViewController,UITextFieldDelegate,UITableV
             guard (try? JSONSerialization.jsonObject(with: dataIsNotNull)) != nil else{return}
             
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(TeamViewController(), animated: true)
+                createTwoScreensVC(goTo: TeamViewController(), secondGoTo: DetailTeamViewController.newInstance(team: self.team), actu: self)
             }
         }
         task.resume()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         fetchEmployeWithStatus()

@@ -36,12 +36,7 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
             self.navigationController?.pushViewController(next, animated: true)
         }
         else{
-            if self.splitViewController != nil {
-                self.splitViewController!.viewControllers[1] = next
-            }
-            else if self.navigationController != nil {
-                self.navigationController?.pushViewController(next, animated: true)
-            }
+            reloadVC(next:next,actu: self)
         }
     }
                
@@ -80,9 +75,12 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
         task.resume()
     }
     
+    
+    
     @IBAction func createTeam(_ sender: Any) {
-        self.navigationController?.pushViewController(CreateTeamViewController(), animated: true)
+        reloadVC(next: CreateTeamViewController(), actu: self)
     }
+    
 }
 
 

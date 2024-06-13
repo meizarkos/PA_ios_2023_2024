@@ -17,6 +17,7 @@
 		EC35D9292C0E1F76002E965D /* EmployeDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC35D9272C0E1F76002E965D /* EmployeDetailTableViewCell.xib */; };
 		EC35D92C2C0E2E8A002E965D /* ModifyEmployeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC35D92A2C0E2E8A002E965D /* ModifyEmployeViewController.swift */; };
 		EC35D92D2C0E2E8A002E965D /* ModifyEmployeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC35D92B2C0E2E8A002E965D /* ModifyEmployeViewController.xib */; };
+		EC4B5DE72C1AE0F100F528A7 /* splitScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B5DE62C1AE0F100F528A7 /* splitScreenManager.swift */; };
 		EC4B7E832C10C30600B6529B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B7E822C10C30600B6529B /* Response.swift */; };
 		EC4B7E862C10C53400B6529B /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B7E842C10C53400B6529B /* ResponseViewController.swift */; };
 		EC4B7E872C10C53400B6529B /* ResponseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B7E852C10C53400B6529B /* ResponseViewController.xib */; };
@@ -75,6 +76,7 @@
 		EC35D9272C0E1F76002E965D /* EmployeDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeDetailTableViewCell.xib; sourceTree = "<group>"; };
 		EC35D92A2C0E2E8A002E965D /* ModifyEmployeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyEmployeViewController.swift; sourceTree = "<group>"; };
 		EC35D92B2C0E2E8A002E965D /* ModifyEmployeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifyEmployeViewController.xib; sourceTree = "<group>"; };
+		EC4B5DE62C1AE0F100F528A7 /* splitScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitScreenManager.swift; sourceTree = "<group>"; };
 		EC4B7E822C10C30600B6529B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		EC4B7E842C10C53400B6529B /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
 		EC4B7E852C10C53400B6529B /* ResponseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResponseViewController.xib; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				EC986F6E2C0A26E60015126D /* API.swift */,
 				EC09FFEA2C0B22D5007C4D45 /* stringManager.swift */,
 				EC35D91C2C0E1BDE002E965D /* tabManager.swift */,
+				EC4B5DE62C1AE0F100F528A7 /* splitScreenManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				EC4B7E8E2C10D12A00B6529B /* CreateResponseViewController.swift in Sources */,
 				EC5E9D372BE014AB00E372D9 /* GetEmployesTableViewCell.swift in Sources */,
 				ECA06F572BD964F200D12959 /* HomeViewController.swift in Sources */,
+				EC4B5DE72C1AE0F100F528A7 /* splitScreenManager.swift in Sources */,
 				EC5E9D262BDFF64200E372D9 /* Team.swift in Sources */,
 				EC986F6F2C0A26E60015126D /* API.swift in Sources */,
 				ECA06F672BD9737B00D12959 /* GetTicketsTableViewCell.swift in Sources */,

@@ -17,6 +17,8 @@ class AccueilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarItem = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
+        
         self.navigationItem.hidesBackButton = true
         
         let request = request(url: "allAdminData", verb: "GET")
@@ -39,33 +41,29 @@ class AccueilViewController: UIViewController {
     }
     
     @IBAction func ticketView(_ sender: Any) {
-        self.navigationController?.pushViewController(UnsolvedTicketsViewController(), animated: true)
+        createVC(goTo: UnsolvedTicketsViewController(), actu: self)
     }
     
     @IBAction func leaveView(_ sender: Any) {
-        self.navigationController?.pushViewController(LeaveViewController(), animated: true)
+        createVC(goTo: LeaveViewController(), actu: self)
     }
     
     @IBAction func companyView(_ sender: Any) {
-        self.navigationController?.pushViewController(CompanyViewController(), animated: true)
+        createVC(goTo: CompanyViewController(), actu: self)
     }
     
     @IBAction func teamView(_ sender: Any) {
-        let splitVC = UISplitViewController()
-        
-        splitVC.viewControllers = [TeamViewController(),UIViewController()]
-        
-        let tabBarControl = UITabBarController()
-    
-        tabBarControl.viewControllers = [
-            splitVC,
-        ]
-        
-        self.navigationController?.pushViewController(tabBarControl, animated: true)
+        createVC(goTo: TeamViewController(),actu: self)
     }
     
     @IBAction func deco(_ sender: Any) {
         exit(1)
+    }
+    
+    static func newInstance()->AccueilViewController{
+        let accueilVC = AccueilViewController()
+        accueilVC.tabBarItem = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
+        return accueilVC
     }
     
 }

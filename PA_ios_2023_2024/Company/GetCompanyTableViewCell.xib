@@ -18,52 +18,32 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw0-OE-T9S">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <rect key="frame" x="0.0" y="50" width="320" height="26.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOf-fM-msl">
-                        <rect key="frame" x="15" y="44" width="55" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJF-mb-qDa">
-                        <rect key="frame" x="85" y="44" width="220" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiX-BF-2r4">
-                        <rect key="frame" x="16" y="100" width="288" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXa-TX-Ly6">
+                        <rect key="frame" x="21" y="101.5" width="278" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MJF-mb-qDa" firstAttribute="leading" secondItem="uOf-fM-msl" secondAttribute="trailing" constant="15" id="1NV-nO-ayX"/>
-                    <constraint firstItem="uOf-fM-msl" firstAttribute="top" secondItem="aw0-OE-T9S" secondAttribute="bottom" constant="15" id="8fb-Uz-DDR"/>
-                    <constraint firstAttribute="trailing" secondItem="MJF-mb-qDa" secondAttribute="trailing" constant="15" id="IHq-Zu-6Yv"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="KiX-BF-2r4" secondAttribute="trailing" id="IlS-EA-9TJ"/>
+                    <constraint firstItem="PXa-TX-Ly6" firstAttribute="top" secondItem="aw0-OE-T9S" secondAttribute="bottom" constant="25" id="4ke-he-SYv"/>
                     <constraint firstItem="aw0-OE-T9S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="J7i-hu-tsw"/>
-                    <constraint firstItem="KiX-BF-2r4" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Lnv-aF-rjW"/>
-                    <constraint firstItem="aw0-OE-T9S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MRO-7L-SfU"/>
+                    <constraint firstItem="aw0-OE-T9S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="MRO-7L-SfU"/>
                     <constraint firstAttribute="trailing" secondItem="aw0-OE-T9S" secondAttribute="trailing" id="QX7-ob-gQf"/>
-                    <constraint firstItem="MJF-mb-qDa" firstAttribute="top" secondItem="aw0-OE-T9S" secondAttribute="bottom" constant="15" id="cJk-hY-2dt"/>
-                    <constraint firstItem="KiX-BF-2r4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="f4T-DQ-8iM"/>
-                    <constraint firstItem="uOf-fM-msl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="mvZ-QD-hHq"/>
+                    <constraint firstItem="PXa-TX-Ly6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="dCk-bF-56i"/>
                     <constraint firstItem="aw0-OE-T9S" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="szy-oo-UII"/>
-                    <constraint firstAttribute="trailing" secondItem="uOf-fM-msl" secondAttribute="trailing" constant="250" id="yDH-kX-Fh0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="PXa-TX-Ly6" secondAttribute="trailing" constant="5" id="vNJ-dQ-4Ou"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="company_name" destination="aw0-OE-T9S" id="X7x-uq-qX8"/>
-                <outlet property="creation" destination="KiX-BF-2r4" id="paS-LJ-qkn"/>
-                <outlet property="phone" destination="MJF-mb-qDa" id="4bb-b0-EuO"/>
-                <outlet property="siret_number" destination="uOf-fM-msl" id="jA8-ux-Pxd"/>
+                <outlet property="company_name" destination="aw0-OE-T9S" id="5Kw-ku-axl"/>
+                <outlet property="siret_number" destination="PXa-TX-Ly6" id="7GZ-xs-2vQ"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
         </tableViewCell>

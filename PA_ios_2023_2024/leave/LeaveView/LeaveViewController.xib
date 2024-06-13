@@ -21,17 +21,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="i6g-dw-y61">
-                    <rect key="frame" x="15" y="35" width="804" height="1062"/>
+                    <rect key="frame" x="15" y="131" width="804" height="931"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ1-jo-nTw">
+                    <rect key="frame" x="25" y="45" width="99" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="i6g-dw-y61" secondAttribute="bottom" constant="15" id="28U-3H-m8H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="i6g-dw-y61" secondAttribute="bottom" constant="50" id="28U-3H-m8H"/>
+                <constraint firstItem="vJ1-jo-nTw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="7Q2-zM-nFn"/>
+                <constraint firstItem="vJ1-jo-nTw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="8hr-3V-ssS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i6g-dw-y61" secondAttribute="trailing" constant="15" id="odJ-ng-OH6"/>
                 <constraint firstItem="i6g-dw-y61" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="p6D-hj-JIS"/>
-                <constraint firstItem="i6g-dw-y61" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="seZ-Uw-ftt"/>
+                <constraint firstItem="i6g-dw-y61" firstAttribute="top" secondItem="vJ1-jo-nTw" secondAttribute="bottom" constant="50" id="xJ3-6i-fwT"/>
             </constraints>
             <point key="canvasLocation" x="132" y="60"/>
         </view>
