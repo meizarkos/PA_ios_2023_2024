@@ -21,24 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4k-Dx-wvw">
-                    <rect key="frame" x="20" y="1031" width="375.5" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Allow vacation" cornerStyle="capsule"/>
-                    <connections>
-                        <action selector="allow:" destination="-1" eventType="touchUpInside" id="2Ed-MK-H1I"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-nd-KbG">
-                    <rect key="frame" x="438.5" y="1031" width="375.5" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Refuse it" cornerStyle="capsule"/>
-                    <connections>
-                        <action selector="refuse:" destination="-1" eventType="touchUpInside" id="esz-rE-LrK"/>
-                    </connections>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvW-4x-rt2">
-                    <rect key="frame" x="20" y="131" width="794" height="850"/>
+                    <rect key="frame" x="20" y="181" width="794" height="906"/>
                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -50,24 +34,41 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUH-nd-KbG">
+                    <rect key="frame" x="534" y="45" width="275" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Refuse it" cornerStyle="large"/>
+                    <connections>
+                        <action selector="refuse:" destination="-1" eventType="touchUpInside" id="esz-rE-LrK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBr-Yu-KJT">
+                    <rect key="frame" x="534" y="101" width="275" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Allow it" cornerStyle="large"/>
+                    <connections>
+                        <action selector="allowVacation:" destination="-1" eventType="touchUpInside" id="pxE-K5-b78"/>
+                        <action selector="refuse:" destination="-1" eventType="touchUpInside" id="4Sb-mR-aFG"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OvW-4x-rt2" secondAttribute="trailing" constant="20" id="4Gd-DH-X3T"/>
-                <constraint firstItem="B4k-Dx-wvw" firstAttribute="top" secondItem="OvW-4x-rt2" secondAttribute="bottom" constant="50" id="4pS-Jv-jX4"/>
-                <constraint firstItem="B4k-Dx-wvw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.45" id="5pD-pd-aes"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dUH-nd-KbG" secondAttribute="bottom" constant="50" id="RBe-NI-NAT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dUH-nd-KbG" secondAttribute="trailing" constant="20" id="U7w-1c-Z55"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OvW-4x-rt2" secondAttribute="bottom" constant="25" id="Cxz-og-DCH"/>
+                <constraint firstItem="dUH-nd-KbG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="OxE-WC-I4Q"/>
                 <constraint firstItem="wJJ-kn-gUD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Vqr-1a-EZE"/>
-                <constraint firstItem="dUH-nd-KbG" firstAttribute="width" secondItem="B4k-Dx-wvw" secondAttribute="width" id="e81-a5-1V0"/>
+                <constraint firstItem="dUH-nd-KbG" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.33" id="ZGI-LO-EdK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BBr-Yu-KJT" secondAttribute="trailing" constant="25" id="fEm-Gx-NJN"/>
                 <constraint firstItem="wJJ-kn-gUD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="jJb-w7-hFg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B4k-Dx-wvw" secondAttribute="bottom" constant="50" id="sna-5o-QRS"/>
-                <constraint firstItem="OvW-4x-rt2" firstAttribute="top" secondItem="wJJ-kn-gUD" secondAttribute="bottom" constant="50" id="wxO-C9-ffi"/>
+                <constraint firstItem="BBr-Yu-KJT" firstAttribute="width" secondItem="dUH-nd-KbG" secondAttribute="width" id="qtU-jx-g7t"/>
+                <constraint firstItem="BBr-Yu-KJT" firstAttribute="top" secondItem="dUH-nd-KbG" secondAttribute="bottom" constant="25" id="rZc-fR-efh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dUH-nd-KbG" secondAttribute="trailing" constant="25" id="utN-Ha-rFB"/>
+                <constraint firstItem="OvW-4x-rt2" firstAttribute="top" secondItem="wJJ-kn-gUD" secondAttribute="bottom" constant="100" id="wxO-C9-ffi"/>
                 <constraint firstItem="OvW-4x-rt2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="y9P-lU-d45"/>
-                <constraint firstItem="B4k-Dx-wvw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zoe-A6-GAd"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="83"/>
+            <point key="canvasLocation" x="131.65467625899282" y="82.553956834532372"/>
         </view>
     </objects>
     <resources>

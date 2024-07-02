@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
                         
                         appdelegate.token = answerSuccess["token"]
                         
-                        self.navigationController?.pushViewController(AccueilViewController(), animated: true)
+                        self.navigationController?.pushViewController(AccueilViewController.newInstance(), animated: true)
                         
                     }
                 }

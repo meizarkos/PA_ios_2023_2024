@@ -72,4 +72,8 @@ class LeaveViewController: UIViewController,UITextFieldDelegate,UITableViewDeleg
     override func viewWillAppear(_ animated: Bool) {
         fetchLeaveView()
     }
+    
+    /*static func newInstance()->UISplitViewController{
+        return goToSplitFromNavBar(goTo: LeaveViewController(),name: "Leaves",image: nil,selectedImage: nil)
+    }*/
 }

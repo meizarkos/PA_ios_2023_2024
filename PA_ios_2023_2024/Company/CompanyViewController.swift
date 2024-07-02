@@ -74,16 +74,8 @@ class CompanyViewController: UIViewController,UITextFieldDelegate,UITableViewDel
     override func viewWillAppear(_ animated: Bool) {
         fetchCompany()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    /*static func newInstance()->UISplitViewController{
+        return goToSplitFromNavBar(goTo: CompanyViewController(),name: "Companies",image: nil,selectedImage: nil)
+    }*/
 }

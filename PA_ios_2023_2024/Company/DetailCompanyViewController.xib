@@ -21,14 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbb-mY-jxQ">
-                    <rect key="frame" x="15" y="1034" width="780" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Allow the company in the website" cornerStyle="capsule"/>
-                    <connections>
-                        <action selector="validateCompany:" destination="-1" eventType="touchUpInside" id="vYh-Mm-LT4"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4s4-EL-Fj0">
                     <rect key="frame" x="25" y="45" width="76.5" height="36"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -36,25 +28,33 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5k-iy-H2j">
-                    <rect key="frame" x="25" y="131" width="760" height="853"/>
+                    <rect key="frame" x="25" y="131" width="760" height="924"/>
                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbb-mY-jxQ">
+                    <rect key="frame" x="501.5" y="45" width="283.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Allow the company in the website" cornerStyle="large"/>
+                    <connections>
+                        <action selector="validateCompany:" destination="-1" eventType="touchUpInside" id="vYh-Mm-LT4"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="m5k-iy-H2j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="0jf-2F-yMZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xbb-mY-jxQ" secondAttribute="trailing" constant="15" id="3Sf-cq-5Cj"/>
-                <constraint firstItem="xbb-mY-jxQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="A7O-JW-1jr"/>
-                <constraint firstItem="xbb-mY-jxQ" firstAttribute="top" secondItem="m5k-iy-H2j" secondAttribute="bottom" constant="50" id="ITV-CD-qe5"/>
+                <constraint firstItem="xbb-mY-jxQ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.35" id="Hnb-Dk-1Dl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m5k-iy-H2j" secondAttribute="trailing" constant="25" id="aHd-V2-WUX"/>
                 <constraint firstItem="4s4-EL-Fj0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="afR-Wo-Kh1"/>
+                <constraint firstAttribute="trailing" secondItem="xbb-mY-jxQ" secondAttribute="trailing" constant="25" id="bai-bl-TMH"/>
+                <constraint firstItem="xbb-mY-jxQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="exm-nT-SfZ"/>
                 <constraint firstItem="4s4-EL-Fj0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="gjv-F1-mZ4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="m5k-iy-H2j" secondAttribute="bottom" constant="25" id="kLx-be-81T"/>
                 <constraint firstItem="m5k-iy-H2j" firstAttribute="top" secondItem="4s4-EL-Fj0" secondAttribute="bottom" constant="50" id="tnx-qS-Iby"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xbb-mY-jxQ" secondAttribute="bottom" constant="15" id="xt9-xw-tpz"/>
             </constraints>
             <point key="canvasLocation" x="132" y="74"/>
         </view>

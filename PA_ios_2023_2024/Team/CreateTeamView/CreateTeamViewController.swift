@@ -33,6 +33,11 @@ class CreateTeamViewController: UIViewController {
             return
         }
         
+        if(teamName.text?.contains(" ") == true){
+            errorName.text = "No spaces allowed"
+            return
+        }
+        
         let request = request(url: "teamName/\(teamName.text!)", verb: "GET")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, err in

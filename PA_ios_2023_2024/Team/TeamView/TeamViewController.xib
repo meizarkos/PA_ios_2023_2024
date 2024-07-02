@@ -26,29 +26,29 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-tC-YPJ">
-                    <rect key="frame" x="15" y="137" width="994" height="1129"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGV-ec-zie">
-                    <rect key="frame" x="15" y="1310" width="994" height="31"/>
+                    <rect key="frame" x="25" y="112" width="182.5" height="31"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Create team"/>
                     <connections>
                         <action selector="createTeam:" destination="-1" eventType="touchUpInside" id="XlU-Oo-soG"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Va6-tC-YPJ">
+                    <rect key="frame" x="15" y="168" width="994" height="1173"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Va6-tC-YPJ" secondAttribute="trailing" constant="15" id="387-zS-xA9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nGV-ec-zie" secondAttribute="trailing" constant="15" id="FrY-Km-ldP"/>
-                <constraint firstItem="nGV-ec-zie" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="WnA-jq-PJ3"/>
-                <constraint firstItem="nGV-ec-zie" firstAttribute="top" secondItem="Va6-tC-YPJ" secondAttribute="bottom" constant="44" id="c8Y-7a-lcU"/>
-                <constraint firstItem="Va6-tC-YPJ" firstAttribute="top" secondItem="SeS-da-Pa9" secondAttribute="bottom" constant="50" id="ddI-OL-9Yp"/>
+                <constraint firstItem="nGV-ec-zie" firstAttribute="top" secondItem="SeS-da-Pa9" secondAttribute="bottom" constant="25" id="6Wk-3L-IVq"/>
+                <constraint firstItem="Va6-tC-YPJ" firstAttribute="top" secondItem="nGV-ec-zie" secondAttribute="bottom" constant="25" id="9yk-c6-kvp"/>
+                <constraint firstItem="nGV-ec-zie" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="QR7-EK-kx3"/>
+                <constraint firstItem="nGV-ec-zie" firstAttribute="width" secondItem="SeS-da-Pa9" secondAttribute="width" id="X9u-K4-oE6"/>
                 <constraint firstItem="SeS-da-Pa9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="j2E-aU-8SK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nGV-ec-zie" secondAttribute="bottom" constant="25" id="pe6-Qk-gCH"/>
+                <constraint firstAttribute="bottom" secondItem="Va6-tC-YPJ" secondAttribute="bottom" constant="25" id="tFe-lV-MrB"/>
                 <constraint firstItem="Va6-tC-YPJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="teW-w8-bFN"/>
                 <constraint firstItem="SeS-da-Pa9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="zBb-iX-geg"/>
             </constraints>

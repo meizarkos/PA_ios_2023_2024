@@ -43,6 +43,7 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarItem = UITabBarItem(title: "Teams", image: nil, selectedImage: nil)
         self.navigationItem.hidesBackButton = true
         
         let cellNib = UINib(nibName: "GetTeamsTableViewCell", bundle: nil)
@@ -79,6 +80,15 @@ class TeamViewController: UIViewController,UITextFieldDelegate,UITableViewDelega
     
     @IBAction func createTeam(_ sender: Any) {
         reloadVC(next: CreateTeamViewController(), actu: self)
+    }
+    
+    static func newInstance()->TeamViewController{
+        
+        let teamVC = TeamViewController()
+        
+        teamVC.tabBarItem = UITabBarItem(title: "Teams", image: nil, selectedImage: nil)
+        
+        return teamVC
     }
     
 }

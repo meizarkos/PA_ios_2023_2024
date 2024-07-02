@@ -19,7 +19,7 @@ func createVC(goTo:UIViewController,actu:UIViewController){
         splitVC,
     ]
     
-    //tabBarControl.navigationItem.hidesBackButton = true
+    tabBarControl.navigationItem.hidesBackButton = true
     
     actu.navigationController?.pushViewController(tabBarControl, animated: true)
 }
@@ -36,7 +36,7 @@ func createTwoScreensVC(goTo:UIViewController,secondGoTo:UIViewController, actu:
         splitVC,
     ]
     
-    //tabBarControl.navigationItem.hidesBackButton = true
+    tabBarControl.navigationItem.hidesBackButton = true
     
     actu.navigationController?.pushViewController(tabBarControl, animated: true)
 }
@@ -49,4 +49,25 @@ func reloadVC(next:UIViewController,actu:UIViewController){
     else if actu.navigationController != nil {
         actu.navigationController?.pushViewController(next, animated: true)
     }
+}
+
+func goToSplitFromNavBar(goTo:UIViewController,name:String,image:UIImage?,selectedImage:UIImage?)->UINavigationController{
+    let splitVC = UISplitViewController()
+    
+    splitVC.viewControllers = [goTo,UIViewController()]
+    
+    let tabBarControl = UITabBarController()
+
+    tabBarControl.viewControllers = [
+        splitVC,
+    ]
+    
+    let bottomBarIcon = UINavigationController(rootViewController: tabBarControl)
+    let  iconManagement = UITabBarItem(title: name, image: image, selectedImage: selectedImage)
+    iconManagement.imageInsets = UIEdgeInsets(top: -6, left: 0, bottom: 6, right: 0)
+    iconManagement.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -16)
+    
+    bottomBarIcon.tabBarItem = iconManagement
+    
+    return bottomBarIcon
 }

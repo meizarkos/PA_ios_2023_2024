@@ -16,16 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func bootIpadApp(){
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let tabController = UITabBarController()
-        
         let homeNav = UINavigationController(rootViewController: HomeViewController())
         
-        tabController.viewControllers = [
-            homeNav,
-            AccueilViewController()
-        ]
-        
-        window.rootViewController = tabController
+        window.rootViewController = homeNav
         window.makeKeyAndVisible()
         self.window = window
     }

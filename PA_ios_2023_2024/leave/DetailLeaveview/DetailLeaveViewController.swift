@@ -55,7 +55,7 @@ class DetailLeaveViewController: UIViewController {
         
     }
     
-    @IBAction func allow(_ sender: Any) {
+    @IBAction func allowVacation(_ sender: Any) {
         let alert = UIAlertController(title: "Valider \(leaveView.employe.lastName) \(leaveView.employe.firstName) to leave ?", message: "The date are from \(removeLastCharacters(from: leaveView.leave.start_date, number: 14)) to \(removeLastCharacters(from: leaveView.leave.end_date, number: 14))", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "Sure", style: .default){ _ in
